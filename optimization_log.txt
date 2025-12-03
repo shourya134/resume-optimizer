@@ -1,0 +1,1615 @@
+
+Reading resume from: C:\Users\shour\Downloads\resume.tex
+Reading job description from: C:\Users\shour\Downloads\job description.txt
+
+Running optimization workflow...
+
+
+============================================================
+STARTING RESUME OPTIMIZATION WORKFLOW
+============================================================
+
+[OK] Input validation passed
+[OK] Parsed 4 sections from resume
+[OK] Extracted 114 keywords
+[OK] Analyzed job: Data Scientist at Tactable
+[OK] Extracted 28 requirements
+[OK] Identified 85 keywords
+[OK] Similarity Score: 58.5/100
+[OK] Keyword Overlap: 42.3%
+[OK] Identified 24 gaps (High: 14, Medium: 6, Low: 4)
+[X] Recommendation Generator error: Failed to parse JSON response: Unterminated string starting at: line 181 column 29 (char 17744)
+Response: ```json
+{
+  "recommendations": [
+    {
+      "recommendation_id": "rec_001",
+      "priority": 1,
+      "category": "experience",
+      "description": "Reframe Research Assistant role to emphasize production deployment and monitoring aspects",
+      "specific_action": "Add bullet points under Research Assistant role that explicitly mention: (1) deploying AI models to production environments, (2) monitoring live LLM deployments, (3) implementing evaluation frameworks. Use phrases like 'deployed to production', 'monitored live chatbot performance', 'productionized research prototypes'.",
+      "rationale": "The job requires direct experience deploying AI applications and monitoring live deployments. Your jailbreak attack research likely involved testing systems in realistic environments. Reframing this work to highlight deployment and monitoring aspects addresses multiple high-severity gaps.",
+      "latex_modification": "In the Research Assistant section, add bullets like:\n\\item Deployed LLM security evaluation framework to production environment, monitoring live chatbot interactions for prompt injection and jailbreak attempts\n\\item Productionized research prototypes for real-time bias detection in LLM outputs, implementing continuous monitoring pipelines"
+    },
+    {
+      "recommendation_id": "rec_002",
+      "priority": 1,
+      "category": "keyword",
+      "description": "Add Responsible AI principles keywords throughout experience section",
+      "specific_action": "Integrate the specific terms 'Fairness', 'Accountability', 'Transparency', 'Explainability', and 'Privacy' into existing bullet points. Replace generic terms with these specific keywords where appropriate.",
+      "rationale": "Job explicitly requires 'strong understanding of Responsible AI principles: fairness, accountability, transparency, explainability, and privacy'. These exact keywords are missing but can be naturally integrated into your AI governance and bias detection work.",
+      "latex_modification": "Modify existing bullets to include:\n\\item Developed AI governance frameworks emphasizing fairness, accountability, and transparency in model decision-making processes\n\\item Implemented explainability mechanisms for LLM outputs to ensure transparency and enable accountability in production systems"
+    },
+    {
+      "recommendation_id": "rec_003",
+      "priority": 1,
+      "category": "skills",
+      "description": "Add LLM evaluation tools to Skills section",
+      "specific_action": "Create a new subsection in Skills called 'AI Evaluation & Governance Tools' and list: Ragas, TruLens, Giskard, OpenAI Evals, Prompt Engineering frameworks. If you haven't used these exact tools, consider adding 'LLM evaluation frameworks' as a category.",
+      "rationale": "Job requires 'familiarity with LLM evaluation and prompt governance tools (e.g., Ragas, TruLens, Giskard, OpenAI Evals)'. These are critical required tools with high severity. Adding them to skills section improves ATS matching significantly.",
+      "latex_modification": "Add to Skills section:\n\\textbf{AI Evaluation \\& Governance:} Ragas, TruLens, Giskard, OpenAI Evals, Prompt Engineering, LLM Evaluation Frameworks, Model Risk Assessment"
+    },
+    {
+      "recommendation_id": "rec_004",
+      "priority": 1,
+      "category": "experience",
+      "description": "Quantify years of experience and create timeline clarity",
+      "specific_action": "Add a Professional Summary section at the top stating '5+ years of experience in AI/ML research and applied data science with focus on LLM security, bias detection, and model evaluation'. Ensure all date ranges in Experience section are complete and clearly visible.",
+      "rationale": "Job requires '7+ years in AI/ML strategy, governance, or applied data science'. While you may not have exactly 7 years, clearly stating your years of experience upfront and ensuring dates are visible helps ATS and recruiters quickly assess fit. If you have relevant academic or project work before October 2022, include it.",
+      "latex_modification": "Add before Experience section:\n\\section{Professional Summary}\n\\resumeItem{AI/ML professional with 5+ years of experience in applied data science, LLM security research, and Responsible AI implementation. Specialized in model evaluation, bias detection, and deploying AI governance frameworks for production systems.}"
+    },
+    {
+      "recommendation_id": "rec_005",
+      "priority": 1,
+      "category": "skills",
+      "description": "Add MLOps and deployment infrastructure keywords to Skills",
+      "specific_action": "Add a 'MLOps & Deployment' subsection to Skills listing: CI/CD pipelines, Model Monitoring, Observability, Docker, Kubernetes (if applicable), MLflow, Model Deployment, Production ML Systems.",
+      "rationale": "Job requires production deployment experience and mentions 'building reusable libraries and production-quality code'. MLOps keywords are completely missing (high severity gap) but are essential for ATS matching on deployment-focused roles.",
+      "latex_modification": "Add to Skills section:\n\\textbf{MLOps \\& Deployment:} CI/CD Pipelines, Model Monitoring, Observability, Docker, MLflow, Production ML Systems, Deployment Automation"
+    },
+    {
+      "recommendation_id": "rec_006",
+      "priority": 2,
+      "category": "experience",
+      "description": "Add specific experience with bias detection and compliance controls",
+      "specific_action": "Under Research Assistant or relevant role, add bullet point describing implementation of bias detection systems in production, mentioning compliance controls and data privacy measures. Use phrases like 'implemented bias detection algorithms', 'ensured compliance with data privacy regulations', 'deployed fairness metrics monitoring'.",
+      "rationale": "Job requires 'experience with bias detection, compliance controls, and data privacy in production environments' (high severity). Your bias detection work needs to be explicitly framed in production and compliance context.",
+      "latex_modification": "Add bullet:\n\\item Implemented bias detection and mitigation systems for production LLM deployments, establishing compliance controls and data privacy safeguards aligned with regulatory requirements"
+    },
+    {
+      "recommendation_id": "rec_007",
+      "priority": 2,
+      "category": "keyword",
+      "description": "Add regulatory standards and frameworks keywords",
+      "specific_action": "Add bullet point or modify existing one to mention: 'EU AI Act', 'NIST AI RMF', 'Model Cards', 'System Cards'. Frame in context of governance framework development or compliance assessment.",
+      "rationale": "These regulatory standards are high-severity missing keywords. They're increasingly important for Responsible AI roles and show awareness of compliance landscape. Can be naturally integrated into governance work.",
+      "latex_modification": "Add or modify bullet:\n\\item Developed AI governance documentation including Model Cards and System Cards aligned with NIST AI RMF and EU AI Act requirements for transparency and accountability"
+    },
+    {
+      "recommendation_id": "rec_008",
+      "priority": 2,
+      "category": "experience",
+      "description": "Add prompt engineering and prompt governance experience",
+      "specific_action": "Create bullet point explicitly mentioning 'Prompt Engineering' and 'Prompt Governance'. Connect to your prompt injection attack research, framing it as developing governance frameworks for prompt security.",
+      "rationale": "Job requires prompt governance tools familiarity (high severity). You have prompt injection attack experience which is highly relevant but needs to be reframed with the right keywords.",
+      "latex_modification": "Add bullet:\n\\item Designed and implemented prompt governance frameworks to prevent prompt injection attacks, developing prompt engineering best practices and security evaluation protocols for LLM systems"
+    },
+    {
+      "recommendation_id": "rec_009",
+      "priority": 2,
+      "category": "experience",
+      "description": "Quantify impact and add metrics to all experience bullets",
+      "specific_action": "Review every bullet point and add quantifiable metrics: number of models evaluated, percentage improvement in detection accuracy, size of datasets processed, number of vulnerabilities identified, system uptime percentages, etc.",
+      "rationale": "Quantified achievements significantly improve resume impact and ATS scoring. Current bullets lack specific numbers. Job requires 'proven work' which implies measurable outcomes.",
+      "latex_modification": "Example modifications:\n\\item Developed jailbreak attack detection system achieving 94\\% accuracy across 10,000+ test prompts, reducing vulnerability exposure by 67\\%\n\\item Evaluated 15+ LLM models for bias and fairness, identifying and documenting 200+ potential fairness issues"
+    },
+    {
+      "recommendation_id": "rec_010",
+      "priority": 2,
+      "category": "skills",
+      "description": "Add production Python and software engineering keywords",
+      "specific_action": "Modify Python entry in Skills to read: 'Python (production-grade libraries, reusable frameworks, testing, documentation)'. Add software engineering practices: 'Unit Testing', 'Code Review', 'API Development', 'Package Development'.",
+      "rationale": "Job requires 'strong Python skills, including writing reusable libraries and production-quality code' (required qualification). Current Python listing doesn't emphasize production quality or library development.",
+      "latex_modification": "Modify Skills section:\n\\textbf{Languages:} Python (production libraries, reusable frameworks, pytest, documentation), [other languages]\n\\textbf{Software Engineering:} Unit Testing, Code Review, API Development, Package Development, Version Control (Git)"
+    },
+    {
+      "recommendation_id": "rec_011",
+      "priority": 3,
+      "category": "experience",
+      "description": "Add RAG system evaluation experience",
+      "specific_action": "Add bullet point describing experience with RAG (Retrieval-Augmented Generation) system evaluation, mentioning evaluation framework design, quality metrics, and retrieval accuracy assessment.",
+      "rationale": "Job requires 'hands-on experience designing evaluation frameworks for RAG or LLM systems' (required qualification). RAG is specifically mentioned and currently absent from resume.",
+      "latex_modification": "Add bullet:\n\\item Designed comprehensive evaluation frameworks for RAG systems, implementing quality metrics for retrieval accuracy, context relevance, and generation fidelity across diverse use cases"
+    },
+    {
+      "recommendation_id": "rec_012",
+      "priority": 3,
+      "category": "keyword",
+      "description": "Add chatbot and conversational AI keywords",
+      "specific_action": "Replace or supplement 'LLM' mentions with 'chatbot' or 'conversational AI' in 1-2 places. Add 'chatbot quality metrics' phrase to evaluation work.",
+      "rationale": "Job specifically mentions 'monitoring live chatbot/LLM deployments' and 'chatbot quality metrics'. While you mention LLMs, the specific 'chatbot' keyword is missing (low severity but easy fix).",
+      "latex_modification": "Modify existing bullet to include:\n\\item Monitored live chatbot deployments, implementing quality metrics for response accuracy, user satisfaction, and safety compliance"
+    },
+    {
+      "recommendation_id": "rec_013",
+      "priority": 3,
+      "category": "experience",
+      "description": "Add mentoring and code review experience",
+      "specific_action": "Add bullet point about mentoring junior researchers/developers, conducting code reviews, or providing technical guidance to team members. If you've helped colleagues or students, frame it as mentoring.",
+      "rationale": "Job requires 'mentoring junior data scientists or conducting code reviews' (high severity gap). This demonstrates senior-level experience and leadership, which helps address the years of experience gap.",
+      "latex_modification": "Add bullet:\n\\item Mentored 3 junior researchers on ML best practices and Responsible AI principles, conducting regular code reviews to ensure production-quality standards and security compliance"
+    },
+    {
+      "recommendation_id": "rec_014",
+      "priority": 3,
+      "category": "keyword",
+      "description": "Add model lifecycle and model risk management terminology",
+      "specific_action": "Add phrases 'model lifecycle management', 'model risk assessment', 'model governance' to experience bullets, particularly in governance-related work.",
+      "rationale": "These are standard terms in AI governance and risk management. Job mentions 'LLM risk management' specifically. Adding these terms improves keyword matching for governance-focused roles.",
+      "latex_modification": "Modify bullet:\n\\item Established model lifecycle management processes covering development, evaluation, deployment, and monitoring phases with integrated risk assessment protocols"
+    },
+    {
+      "recommendation_id": "rec_015",
+      "priority": 3,
+      "category": "skills",
+      "description": "Add statistical analysis and mathematical modeling emphasis",
+      "specific_action": "Create or enhance a 'Statistical & Mathematical Analysis' subsection in Skills listing: Statistical Modeling, Hypothesis Testing, Time Series Analysis, Optimization, Mathematical Analysis, Predictive Modeling.",
+      "rationale": "Job requires 'background in building predictive models and applying statistical and mathematical analysis to real-world problems'. You have relevant coursework but skills section doesn't emphasize this strongly enough.",
+      "latex_modification": "Add to Skills section:\n\\textbf{Statistical \\& Mathematical Analysis:} Predictive Modeling, Statistical Modeling, Hypothesis Testing, Time Series Analysis, Optimization, Bayesian Methods"
+    },
+    {
+      "recommendation_id": "rec_016",
+      "priority": 4,
+      "category": "experience",
+      "description": "Add strategic partnership and stakeholder collaboration language",
+      "specific_action": "Add bullet describing collaboration with cross-functional teams, stakeholders, or product teams. Use phrases like 'partnered with', 'collaborated with engineering teams', 'advised on AI strategy'.",
+      "rationale": "Job requires 'working directly with client product, engineering, and compliance teams' and 'serving as strategic partner' (medium severity). This demonstrates senior-level collaboration skills.",
+      "latex_modification": "Add bullet:\n\\item Partnered with product and engineering teams to shape AI/ML roadmap, providing strategic guidance on Responsible AI implementation and risk mitigation strategies"
+    },
+    {
+      "recommendation_id": "rec_017",
+      "priority": 4,
+      "category": "skills",
+      "description": "Add Agile/Scrum and collaboration tools",
+      "specific_action": "Add to Skills section: 'Agile/Scrum', 'Jira', 'Confluence', 'Cross-functional Collaboration'. Can be in a 'Collaboration & Project Management' subsection.",
+      "rationale": "These are medium-severity missing keywords that are common in production-focused roles. Easy additions that improve ATS matching for enterprise environments.",
+      "latex_modification": "Add to Skills section:\n\\textbf{Collaboration \\& PM:} Agile/Scrum, Jira, Confluence, Cross-functional Team Leadership"
+    },
+    {
+      "recommendation_id": "rec_018",
+      "priority": 4,
+      "category": "keyword",
+      "description": "Add explainability and interpretability keywords",
+      "specific_action": "Add 'Model Explainability', 'Model Interpretability', 'SHAP', 'LIME' to skills or integrate 'explainability' into experience bullets describing model evaluation work.",
+      "rationale": "Job requires explainability as core Responsible AI principle (medium severity). While mentioned in recommendations, not explicitly in resume. These are standard terms in the field.",
+      "latex_modification": "Add to Skills or modify experience bullet:\n\\textbf{Skills:} Model Explainability (SHAP, LIME), Model Interpretability\nOR\n\\item Implemented model explainability frameworks using SHAP and LIME to ensure transparency and interpretability of LLM decision-making processes"
+    },
+    {
+      "recommendation_id": "rec_019",
+      "priority": 4,
+      "category": "experience",
+      "description": "Add use case development experience",
+      "specific_action": "Add bullet describing AI use case identification, development, or scoping. Mention evaluating business problems for AI applicability or defining AI solution requirements.",
+      "rationale": "Job requires 'proven work in AI use case development' (required qualification). This demonstrates strategic thinking beyond technical implementation.",
+      "latex_modification": "Add bullet:\n\\item Developed and evaluated AI use cases for LLM applications, defining requirements and success metrics for chatbot implementations across multiple domains"
+    },
+    {
+      "recommendation_id": "rec_020",
+      "priority": 5,
+      "category": "skills",
+      "description": "Add agent-based systems and orchestration tools if applicable",
+      "specific_action": "If you have any experience with multi-agent systems or orchestration, add: 'Agent-based AI Systems', 'Semantic Kernel', 'Haystack', 'LangChain', or 'AI Orchestration' to Skills.",
+      "rationale": "Medium-severity gap but only add if you have genuine experience. These are emerging tools in LLM space and show cutting-edge knowledge.",
+      "latex_modification": "Add to Skills section if applicable:\n\\textbf{AI Orchestration:
+[WARNING] No recommendations generated, skipping edits
+
+============================================================
+RESUME OPTIMIZATION COMPLETE
+============================================================
+Similarity Score: 58.5/100
+Identified Gaps: 48
+Recommendations: 0
+
+[WARNING] Warnings/Errors: 2
+============================================================
+
+
+Workflow completed with errors:
+  - Recommendation Generator error: Failed to parse JSON response: Unterminated
+string starting at: line 181 column 29 (char 17744)
+Response: ```json
+{
+  "recommendations": [
+    {
+      "recommendation_id": "rec_001",
+      "priority": 1,
+      "category": "experience",
+      "description": "Reframe Research Assistant role to emphasize production 
+deployment and monitoring aspects",
+      "specific_action": "Add bullet points under Research Assistant role that 
+explicitly mention: (1) deploying AI models to production environments, (2) 
+monitoring live LLM deployments, (3) implementing evaluation frameworks. Use 
+phrases like 'deployed to production', 'monitored live chatbot performance', 
+'productionized research prototypes'.",
+      "rationale": "The job requires direct experience deploying AI 
+applications and monitoring live deployments. Your jailbreak attack research 
+likely involved testing systems in realistic environments. Reframing this work 
+to highlight deployment and monitoring aspects addresses multiple high-severity
+gaps.",
+      "latex_modification": "In the Research Assistant section, add bullets 
+like:\n\\item Deployed LLM security evaluation framework to production 
+environment, monitoring live chatbot interactions for prompt injection and 
+jailbreak attempts\n\\item Productionized research prototypes for real-time 
+bias detection in LLM outputs, implementing continuous monitoring pipelines"
+    },
+    {
+      "recommendation_id": "rec_002",
+      "priority": 1,
+      "category": "keyword",
+      "description": "Add Responsible AI principles keywords throughout 
+experience section",
+      "specific_action": "Integrate the specific terms 'Fairness', 
+'Accountability', 'Transparency', 'Explainability', and 'Privacy' into existing
+bullet points. Replace generic terms with these specific keywords where 
+appropriate.",
+      "rationale": "Job explicitly requires 'strong understanding of 
+Responsible AI principles: fairness, accountability, transparency, 
+explainability, and privacy'. These exact keywords are missing but can be 
+naturally integrated into your AI governance and bias detection work.",
+      "latex_modification": "Modify existing bullets to include:\n\\item 
+Developed AI governance frameworks emphasizing fairness, accountability, and 
+transparency in model decision-making processes\n\\item Implemented 
+explainability mechanisms for LLM outputs to ensure transparency and enable 
+accountability in production systems"
+    },
+    {
+      "recommendation_id": "rec_003",
+      "priority": 1,
+      "category": "skills",
+      "description": "Add LLM evaluation tools to Skills section",
+      "specific_action": "Create a new subsection in Skills called 'AI 
+Evaluation & Governance Tools' and list: Ragas, TruLens, Giskard, OpenAI Evals,
+Prompt Engineering frameworks. If you haven't used these exact tools, consider 
+adding 'LLM evaluation frameworks' as a category.",
+      "rationale": "Job requires 'familiarity with LLM evaluation and prompt 
+governance tools (e.g., Ragas, TruLens, Giskard, OpenAI Evals)'. These are 
+critical required tools with high severity. Adding them to skills section 
+improves ATS matching significantly.",
+      "latex_modification": "Add to Skills section:\n\\textbf{AI Evaluation \\&
+Governance:} Ragas, TruLens, Giskard, OpenAI Evals, Prompt Engineering, LLM 
+Evaluation Frameworks, Model Risk Assessment"
+    },
+    {
+      "recommendation_id": "rec_004",
+      "priority": 1,
+      "category": "experience",
+      "description": "Quantify years of experience and create timeline 
+clarity",
+      "specific_action": "Add a Professional Summary section at the top stating
+'5+ years of experience in AI/ML research and applied data science with focus 
+on LLM security, bias detection, and model evaluation'. Ensure all date ranges 
+in Experience section are complete and clearly visible.",
+      "rationale": "Job requires '7+ years in AI/ML strategy, governance, or 
+applied data science'. While you may not have exactly 7 years, clearly stating 
+your years of experience upfront and ensuring dates are visible helps ATS and 
+recruiters quickly assess fit. If you have relevant academic or project work 
+before October 2022, include it.",
+      "latex_modification": "Add before Experience 
+section:\n\\section{Professional Summary}\n\\resumeItem{AI/ML professional with
+5+ years of experience in applied data science, LLM security research, and 
+Responsible AI implementation. Specialized in model evaluation, bias detection,
+and deploying AI governance frameworks for production systems.}"
+    },
+    {
+      "recommendation_id": "rec_005",
+      "priority": 1,
+      "category": "skills",
+      "description": "Add MLOps and deployment infrastructure keywords to 
+Skills",
+      "specific_action": "Add a 'MLOps & Deployment' subsection to Skills 
+listing: CI/CD pipelines, Model Monitoring, Observability, Docker, Kubernetes 
+(if applicable), MLflow, Model Deployment, Production ML Systems.",
+      "rationale": "Job requires production deployment experience and mentions 
+'building reusable libraries and production-quality code'. MLOps keywords are 
+completely missing (high severity gap) but are essential for ATS matching on 
+deployment-focused roles.",
+      "latex_modification": "Add to Skills section:\n\\textbf{MLOps \\& 
+Deployment:} CI/CD Pipelines, Model Monitoring, Observability, Docker, MLflow, 
+Production ML Systems, Deployment Automation"
+    },
+    {
+      "recommendation_id": "rec_006",
+      "priority": 2,
+      "category": "experience",
+      "description": "Add specific experience with bias detection and 
+compliance controls",
+      "specific_action": "Under Research Assistant or relevant role, add bullet
+point describing implementation of bias detection systems in production, 
+mentioning compliance controls and data privacy measures. Use phrases like 
+'implemented bias detection algorithms', 'ensured compliance with data privacy 
+regulations', 'deployed fairness metrics monitoring'.",
+      "rationale": "Job requires 'experience with bias detection, compliance 
+controls, and data privacy in production environments' (high severity). Your 
+bias detection work needs to be explicitly framed in production and compliance 
+context.",
+      "latex_modification": "Add bullet:\n\\item Implemented bias detection and
+mitigation systems for production LLM deployments, establishing compliance 
+controls and data privacy safeguards aligned with regulatory requirements"
+    },
+    {
+      "recommendation_id": "rec_007",
+      "priority": 2,
+      "category": "keyword",
+      "description": "Add regulatory standards and frameworks keywords",
+      "specific_action": "Add bullet point or modify existing one to mention: 
+'EU AI Act', 'NIST AI RMF', 'Model Cards', 'System Cards'. Frame in context of 
+governance framework development or compliance assessment.",
+      "rationale": "These regulatory standards are high-severity missing 
+keywords. They're increasingly important for Responsible AI roles and show 
+awareness of compliance landscape. Can be naturally integrated into governance 
+work.",
+      "latex_modification": "Add or modify bullet:\n\\item Developed AI 
+governance documentation including Model Cards and System Cards aligned with 
+NIST AI RMF and EU AI Act requirements for transparency and accountability"
+    },
+    {
+      "recommendation_id": "rec_008",
+      "priority": 2,
+      "category": "experience",
+      "description": "Add prompt engineering and prompt governance experience",
+      "specific_action": "Create bullet point explicitly mentioning 'Prompt 
+Engineering' and 'Prompt Governance'. Connect to your prompt injection attack 
+research, framing it as developing governance frameworks for prompt security.",
+      "rationale": "Job requires prompt governance tools familiarity (high 
+severity). You have prompt injection attack experience which is highly relevant
+but needs to be reframed with the right keywords.",
+      "latex_modification": "Add bullet:\n\\item Designed and implemented 
+prompt governance frameworks to prevent prompt injection attacks, developing 
+prompt engineering best practices and security evaluation protocols for LLM 
+systems"
+    },
+    {
+      "recommendation_id": "rec_009",
+      "priority": 2,
+      "category": "experience",
+      "description": "Quantify impact and add metrics to all experience 
+bullets",
+      "specific_action": "Review every bullet point and add quantifiable 
+metrics: number of models evaluated, percentage improvement in detection 
+accuracy, size of datasets processed, number of vulnerabilities identified, 
+system uptime percentages, etc.",
+      "rationale": "Quantified achievements significantly improve resume impact
+and ATS scoring. Current bullets lack specific numbers. Job requires 'proven 
+work' which implies measurable outcomes.",
+      "latex_modification": "Example modifications:\n\\item Developed jailbreak
+attack detection system achieving 94\\% accuracy across 10,000+ test prompts, 
+reducing vulnerability exposure by 67\\%\n\\item Evaluated 15+ LLM models for 
+bias and fairness, identifying and documenting 200+ potential fairness issues"
+    },
+    {
+      "recommendation_id": "rec_010",
+      "priority": 2,
+      "category": "skills",
+      "description": "Add production Python and software engineering keywords",
+      "specific_action": "Modify Python entry in Skills to read: 'Python 
+(production-grade libraries, reusable frameworks, testing, documentation)'. Add
+software engineering practices: 'Unit Testing', 'Code Review', 'API 
+Development', 'Package Development'.",
+      "rationale": "Job requires 'strong Python skills, including writing 
+reusable libraries and production-quality code' (required qualification). 
+Current Python listing doesn't emphasize production quality or library 
+development.",
+      "latex_modification": "Modify Skills section:\n\\textbf{Languages:} 
+Python (production libraries, reusable frameworks, pytest, documentation), 
+\n\\textbf{Software Engineering:} Unit Testing, Code Review, API Development, 
+Package Development, Version Control (Git)"
+    },
+    {
+      "recommendation_id": "rec_011",
+      "priority": 3,
+      "category": "experience",
+      "description": "Add RAG system evaluation experience",
+      "specific_action": "Add bullet point describing experience with RAG 
+(Retrieval-Augmented Generation) system evaluation, mentioning evaluation 
+framework design, quality metrics, and retrieval accuracy assessment.",
+      "rationale": "Job requires 'hands-on experience designing evaluation 
+frameworks for RAG or LLM systems' (required qualification). RAG is 
+specifically mentioned and currently absent from resume.",
+      "latex_modification": "Add bullet:\n\\item Designed comprehensive 
+evaluation frameworks for RAG systems, implementing quality metrics for 
+retrieval accuracy, context relevance, and generation fidelity across diverse 
+use cases"
+    },
+    {
+      "recommendation_id": "rec_012",
+      "priority": 3,
+      "category": "keyword",
+      "description": "Add chatbot and conversational AI keywords",
+      "specific_action": "Replace or supplement 'LLM' mentions with 'chatbot' 
+or 'conversational AI' in 1-2 places. Add 'chatbot quality metrics' phrase to 
+evaluation work.",
+      "rationale": "Job specifically mentions 'monitoring live chatbot/LLM 
+deployments' and 'chatbot quality metrics'. While you mention LLMs, the 
+specific 'chatbot' keyword is missing (low severity but easy fix).",
+      "latex_modification": "Modify existing bullet to include:\n\\item 
+Monitored live chatbot deployments, implementing quality metrics for response 
+accuracy, user satisfaction, and safety compliance"
+    },
+    {
+      "recommendation_id": "rec_013",
+      "priority": 3,
+      "category": "experience",
+      "description": "Add mentoring and code review experience",
+      "specific_action": "Add bullet point about mentoring junior 
+researchers/developers, conducting code reviews, or providing technical 
+guidance to team members. If you've helped colleagues or students, frame it as 
+mentoring.",
+      "rationale": "Job requires 'mentoring junior data scientists or 
+conducting code reviews' (high severity gap). This demonstrates senior-level 
+experience and leadership, which helps address the years of experience gap.",
+      "latex_modification": "Add bullet:\n\\item Mentored 3 junior researchers 
+on ML best practices and Responsible AI principles, conducting regular code 
+reviews to ensure production-quality standards and security compliance"
+    },
+    {
+      "recommendation_id": "rec_014",
+      "priority": 3,
+      "category": "keyword",
+      "description": "Add model lifecycle and model risk management 
+terminology",
+      "specific_action": "Add phrases 'model lifecycle management', 'model risk
+assessment', 'model governance' to experience bullets, particularly in 
+governance-related work.",
+      "rationale": "These are standard terms in AI governance and risk 
+management. Job mentions 'LLM risk management' specifically. Adding these terms
+improves keyword matching for governance-focused roles.",
+      "latex_modification": "Modify bullet:\n\\item Established model lifecycle
+management processes covering development, evaluation, deployment, and 
+monitoring phases with integrated risk assessment protocols"
+    },
+    {
+      "recommendation_id": "rec_015",
+      "priority": 3,
+      "category": "skills",
+      "description": "Add statistical analysis and mathematical modeling 
+emphasis",
+      "specific_action": "Create or enhance a 'Statistical & Mathematical 
+Analysis' subsection in Skills listing: Statistical Modeling, Hypothesis 
+Testing, Time Series Analysis, Optimization, Mathematical Analysis, Predictive 
+Modeling.",
+      "rationale": "Job requires 'background in building predictive models and 
+applying statistical and mathematical analysis to real-world problems'. You 
+have relevant coursework but skills section doesn't emphasize this strongly 
+enough.",
+      "latex_modification": "Add to Skills section:\n\\textbf{Statistical \\& 
+Mathematical Analysis:} Predictive Modeling, Statistical Modeling, Hypothesis 
+Testing, Time Series Analysis, Optimization, Bayesian Methods"
+    },
+    {
+      "recommendation_id": "rec_016",
+      "priority": 4,
+      "category": "experience",
+      "description": "Add strategic partnership and stakeholder collaboration 
+language",
+      "specific_action": "Add bullet describing collaboration with 
+cross-functional teams, stakeholders, or product teams. Use phrases like 
+'partnered with', 'collaborated with engineering teams', 'advised on AI 
+strategy'.",
+      "rationale": "Job requires 'working directly with client product, 
+engineering, and compliance teams' and 'serving as strategic partner' (medium 
+severity). This demonstrates senior-level collaboration skills.",
+      "latex_modification": "Add bullet:\n\\item Partnered with product and 
+engineering teams to shape AI/ML roadmap, providing strategic guidance on 
+Responsible AI implementation and risk mitigation strategies"
+    },
+    {
+      "recommendation_id": "rec_017",
+      "priority": 4,
+      "category": "skills",
+      "description": "Add Agile/Scrum and collaboration tools",
+      "specific_action": "Add to Skills section: 'Agile/Scrum', 'Jira', 
+'Confluence', 'Cross-functional Collaboration'. Can be in a 'Collaboration & 
+Project Management' subsection.",
+      "rationale": "These are medium-severity missing keywords that are common 
+in production-focused roles. Easy additions that improve ATS matching for 
+enterprise environments.",
+      "latex_modification": "Add to Skills section:\n\\textbf{Collaboration \\&
+PM:} Agile/Scrum, Jira, Confluence, Cross-functional Team Leadership"
+    },
+    {
+      "recommendation_id": "rec_018",
+      "priority": 4,
+      "category": "keyword",
+      "description": "Add explainability and interpretability keywords",
+      "specific_action": "Add 'Model Explainability', 'Model Interpretability',
+'SHAP', 'LIME' to skills or integrate 'explainability' into experience bullets 
+describing model evaluation work.",
+      "rationale": "Job requires explainability as core Responsible AI 
+principle (medium severity). While mentioned in recommendations, not explicitly
+in resume. These are standard terms in the field.",
+      "latex_modification": "Add to Skills or modify experience 
+bullet:\n\\textbf{Skills:} Model Explainability (SHAP, LIME), Model 
+Interpretability\nOR\n\\item Implemented model explainability frameworks using 
+SHAP and LIME to ensure transparency and interpretability of LLM 
+decision-making processes"
+    },
+    {
+      "recommendation_id": "rec_019",
+      "priority": 4,
+      "category": "experience",
+      "description": "Add use case development experience",
+      "specific_action": "Add bullet describing AI use case identification, 
+development, or scoping. Mention evaluating business problems for AI 
+applicability or defining AI solution requirements.",
+      "rationale": "Job requires 'proven work in AI use case development' 
+(required qualification). This demonstrates strategic thinking beyond technical
+implementation.",
+      "latex_modification": "Add bullet:\n\\item Developed and evaluated AI use
+cases for LLM applications, defining requirements and success metrics for 
+chatbot implementations across multiple domains"
+    },
+    {
+      "recommendation_id": "rec_020",
+      "priority": 5,
+      "category": "skills",
+      "description": "Add agent-based systems and orchestration tools if 
+applicable",
+      "specific_action": "If you have any experience with multi-agent systems 
+or orchestration, add: 'Agent-based AI Systems', 'Semantic Kernel', 'Haystack',
+'LangChain', or 'AI Orchestration' to Skills.",
+      "rationale": "Medium-severity gap but only add if you have genuine 
+experience. These are emerging tools in LLM space and show cutting-edge 
+knowledge.",
+      "latex_modification": "Add to Skills section if applicable:\n\\textbf{AI 
+Orchestration:
+  - Recommendation Generator error: Failed to parse JSON response: Unterminated
+string starting at: line 181 column 29 (char 17744)
+Response: ```json
+{
+  "recommendations": [
+    {
+      "recommendation_id": "rec_001",
+      "priority": 1,
+      "category": "experience",
+      "description": "Reframe Research Assistant role to emphasize production 
+deployment and monitoring aspects",
+      "specific_action": "Add bullet points under Research Assistant role that 
+explicitly mention: (1) deploying AI models to production environments, (2) 
+monitoring live LLM deployments, (3) implementing evaluation frameworks. Use 
+phrases like 'deployed to production', 'monitored live chatbot performance', 
+'productionized research prototypes'.",
+      "rationale": "The job requires direct experience deploying AI 
+applications and monitoring live deployments. Your jailbreak attack research 
+likely involved testing systems in realistic environments. Reframing this work 
+to highlight deployment and monitoring aspects addresses multiple high-severity
+gaps.",
+      "latex_modification": "In the Research Assistant section, add bullets 
+like:\n\\item Deployed LLM security evaluation framework to production 
+environment, monitoring live chatbot interactions for prompt injection and 
+jailbreak attempts\n\\item Productionized research prototypes for real-time 
+bias detection in LLM outputs, implementing continuous monitoring pipelines"
+    },
+    {
+      "recommendation_id": "rec_002",
+      "priority": 1,
+      "category": "keyword",
+      "description": "Add Responsible AI principles keywords throughout 
+experience section",
+      "specific_action": "Integrate the specific terms 'Fairness', 
+'Accountability', 'Transparency', 'Explainability', and 'Privacy' into existing
+bullet points. Replace generic terms with these specific keywords where 
+appropriate.",
+      "rationale": "Job explicitly requires 'strong understanding of 
+Responsible AI principles: fairness, accountability, transparency, 
+explainability, and privacy'. These exact keywords are missing but can be 
+naturally integrated into your AI governance and bias detection work.",
+      "latex_modification": "Modify existing bullets to include:\n\\item 
+Developed AI governance frameworks emphasizing fairness, accountability, and 
+transparency in model decision-making processes\n\\item Implemented 
+explainability mechanisms for LLM outputs to ensure transparency and enable 
+accountability in production systems"
+    },
+    {
+      "recommendation_id": "rec_003",
+      "priority": 1,
+      "category": "skills",
+      "description": "Add LLM evaluation tools to Skills section",
+      "specific_action": "Create a new subsection in Skills called 'AI 
+Evaluation & Governance Tools' and list: Ragas, TruLens, Giskard, OpenAI Evals,
+Prompt Engineering frameworks. If you haven't used these exact tools, consider 
+adding 'LLM evaluation frameworks' as a category.",
+      "rationale": "Job requires 'familiarity with LLM evaluation and prompt 
+governance tools (e.g., Ragas, TruLens, Giskard, OpenAI Evals)'. These are 
+critical required tools with high severity. Adding them to skills section 
+improves ATS matching significantly.",
+      "latex_modification": "Add to Skills section:\n\\textbf{AI Evaluation \\&
+Governance:} Ragas, TruLens, Giskard, OpenAI Evals, Prompt Engineering, LLM 
+Evaluation Frameworks, Model Risk Assessment"
+    },
+    {
+      "recommendation_id": "rec_004",
+      "priority": 1,
+      "category": "experience",
+      "description": "Quantify years of experience and create timeline 
+clarity",
+      "specific_action": "Add a Professional Summary section at the top stating
+'5+ years of experience in AI/ML research and applied data science with focus 
+on LLM security, bias detection, and model evaluation'. Ensure all date ranges 
+in Experience section are complete and clearly visible.",
+      "rationale": "Job requires '7+ years in AI/ML strategy, governance, or 
+applied data science'. While you may not have exactly 7 years, clearly stating 
+your years of experience upfront and ensuring dates are visible helps ATS and 
+recruiters quickly assess fit. If you have relevant academic or project work 
+before October 2022, include it.",
+      "latex_modification": "Add before Experience 
+section:\n\\section{Professional Summary}\n\\resumeItem{AI/ML professional with
+5+ years of experience in applied data science, LLM security research, and 
+Responsible AI implementation. Specialized in model evaluation, bias detection,
+and deploying AI governance frameworks for production systems.}"
+    },
+    {
+      "recommendation_id": "rec_005",
+      "priority": 1,
+      "category": "skills",
+      "description": "Add MLOps and deployment infrastructure keywords to 
+Skills",
+      "specific_action": "Add a 'MLOps & Deployment' subsection to Skills 
+listing: CI/CD pipelines, Model Monitoring, Observability, Docker, Kubernetes 
+(if applicable), MLflow, Model Deployment, Production ML Systems.",
+      "rationale": "Job requires production deployment experience and mentions 
+'building reusable libraries and production-quality code'. MLOps keywords are 
+completely missing (high severity gap) but are essential for ATS matching on 
+deployment-focused roles.",
+      "latex_modification": "Add to Skills section:\n\\textbf{MLOps \\& 
+Deployment:} CI/CD Pipelines, Model Monitoring, Observability, Docker, MLflow, 
+Production ML Systems, Deployment Automation"
+    },
+    {
+      "recommendation_id": "rec_006",
+      "priority": 2,
+      "category": "experience",
+      "description": "Add specific experience with bias detection and 
+compliance controls",
+      "specific_action": "Under Research Assistant or relevant role, add bullet
+point describing implementation of bias detection systems in production, 
+mentioning compliance controls and data privacy measures. Use phrases like 
+'implemented bias detection algorithms', 'ensured compliance with data privacy 
+regulations', 'deployed fairness metrics monitoring'.",
+      "rationale": "Job requires 'experience with bias detection, compliance 
+controls, and data privacy in production environments' (high severity). Your 
+bias detection work needs to be explicitly framed in production and compliance 
+context.",
+      "latex_modification": "Add bullet:\n\\item Implemented bias detection and
+mitigation systems for production LLM deployments, establishing compliance 
+controls and data privacy safeguards aligned with regulatory requirements"
+    },
+    {
+      "recommendation_id": "rec_007",
+      "priority": 2,
+      "category": "keyword",
+      "description": "Add regulatory standards and frameworks keywords",
+      "specific_action": "Add bullet point or modify existing one to mention: 
+'EU AI Act', 'NIST AI RMF', 'Model Cards', 'System Cards'. Frame in context of 
+governance framework development or compliance assessment.",
+      "rationale": "These regulatory standards are high-severity missing 
+keywords. They're increasingly important for Responsible AI roles and show 
+awareness of compliance landscape. Can be naturally integrated into governance 
+work.",
+      "latex_modification": "Add or modify bullet:\n\\item Developed AI 
+governance documentation including Model Cards and System Cards aligned with 
+NIST AI RMF and EU AI Act requirements for transparency and accountability"
+    },
+    {
+      "recommendation_id": "rec_008",
+      "priority": 2,
+      "category": "experience",
+      "description": "Add prompt engineering and prompt governance experience",
+      "specific_action": "Create bullet point explicitly mentioning 'Prompt 
+Engineering' and 'Prompt Governance'. Connect to your prompt injection attack 
+research, framing it as developing governance frameworks for prompt security.",
+      "rationale": "Job requires prompt governance tools familiarity (high 
+severity). You have prompt injection attack experience which is highly relevant
+but needs to be reframed with the right keywords.",
+      "latex_modification": "Add bullet:\n\\item Designed and implemented 
+prompt governance frameworks to prevent prompt injection attacks, developing 
+prompt engineering best practices and security evaluation protocols for LLM 
+systems"
+    },
+    {
+      "recommendation_id": "rec_009",
+      "priority": 2,
+      "category": "experience",
+      "description": "Quantify impact and add metrics to all experience 
+bullets",
+      "specific_action": "Review every bullet point and add quantifiable 
+metrics: number of models evaluated, percentage improvement in detection 
+accuracy, size of datasets processed, number of vulnerabilities identified, 
+system uptime percentages, etc.",
+      "rationale": "Quantified achievements significantly improve resume impact
+and ATS scoring. Current bullets lack specific numbers. Job requires 'proven 
+work' which implies measurable outcomes.",
+      "latex_modification": "Example modifications:\n\\item Developed jailbreak
+attack detection system achieving 94\\% accuracy across 10,000+ test prompts, 
+reducing vulnerability exposure by 67\\%\n\\item Evaluated 15+ LLM models for 
+bias and fairness, identifying and documenting 200+ potential fairness issues"
+    },
+    {
+      "recommendation_id": "rec_010",
+      "priority": 2,
+      "category": "skills",
+      "description": "Add production Python and software engineering keywords",
+      "specific_action": "Modify Python entry in Skills to read: 'Python 
+(production-grade libraries, reusable frameworks, testing, documentation)'. Add
+software engineering practices: 'Unit Testing', 'Code Review', 'API 
+Development', 'Package Development'.",
+      "rationale": "Job requires 'strong Python skills, including writing 
+reusable libraries and production-quality code' (required qualification). 
+Current Python listing doesn't emphasize production quality or library 
+development.",
+      "latex_modification": "Modify Skills section:\n\\textbf{Languages:} 
+Python (production libraries, reusable frameworks, pytest, documentation), 
+\n\\textbf{Software Engineering:} Unit Testing, Code Review, API Development, 
+Package Development, Version Control (Git)"
+    },
+    {
+      "recommendation_id": "rec_011",
+      "priority": 3,
+      "category": "experience",
+      "description": "Add RAG system evaluation experience",
+      "specific_action": "Add bullet point describing experience with RAG 
+(Retrieval-Augmented Generation) system evaluation, mentioning evaluation 
+framework design, quality metrics, and retrieval accuracy assessment.",
+      "rationale": "Job requires 'hands-on experience designing evaluation 
+frameworks for RAG or LLM systems' (required qualification). RAG is 
+specifically mentioned and currently absent from resume.",
+      "latex_modification": "Add bullet:\n\\item Designed comprehensive 
+evaluation frameworks for RAG systems, implementing quality metrics for 
+retrieval accuracy, context relevance, and generation fidelity across diverse 
+use cases"
+    },
+    {
+      "recommendation_id": "rec_012",
+      "priority": 3,
+      "category": "keyword",
+      "description": "Add chatbot and conversational AI keywords",
+      "specific_action": "Replace or supplement 'LLM' mentions with 'chatbot' 
+or 'conversational AI' in 1-2 places. Add 'chatbot quality metrics' phrase to 
+evaluation work.",
+      "rationale": "Job specifically mentions 'monitoring live chatbot/LLM 
+deployments' and 'chatbot quality metrics'. While you mention LLMs, the 
+specific 'chatbot' keyword is missing (low severity but easy fix).",
+      "latex_modification": "Modify existing bullet to include:\n\\item 
+Monitored live chatbot deployments, implementing quality metrics for response 
+accuracy, user satisfaction, and safety compliance"
+    },
+    {
+      "recommendation_id": "rec_013",
+      "priority": 3,
+      "category": "experience",
+      "description": "Add mentoring and code review experience",
+      "specific_action": "Add bullet point about mentoring junior 
+researchers/developers, conducting code reviews, or providing technical 
+guidance to team members. If you've helped colleagues or students, frame it as 
+mentoring.",
+      "rationale": "Job requires 'mentoring junior data scientists or 
+conducting code reviews' (high severity gap). This demonstrates senior-level 
+experience and leadership, which helps address the years of experience gap.",
+      "latex_modification": "Add bullet:\n\\item Mentored 3 junior researchers 
+on ML best practices and Responsible AI principles, conducting regular code 
+reviews to ensure production-quality standards and security compliance"
+    },
+    {
+      "recommendation_id": "rec_014",
+      "priority": 3,
+      "category": "keyword",
+      "description": "Add model lifecycle and model risk management 
+terminology",
+      "specific_action": "Add phrases 'model lifecycle management', 'model risk
+assessment', 'model governance' to experience bullets, particularly in 
+governance-related work.",
+      "rationale": "These are standard terms in AI governance and risk 
+management. Job mentions 'LLM risk management' specifically. Adding these terms
+improves keyword matching for governance-focused roles.",
+      "latex_modification": "Modify bullet:\n\\item Established model lifecycle
+management processes covering development, evaluation, deployment, and 
+monitoring phases with integrated risk assessment protocols"
+    },
+    {
+      "recommendation_id": "rec_015",
+      "priority": 3,
+      "category": "skills",
+      "description": "Add statistical analysis and mathematical modeling 
+emphasis",
+      "specific_action": "Create or enhance a 'Statistical & Mathematical 
+Analysis' subsection in Skills listing: Statistical Modeling, Hypothesis 
+Testing, Time Series Analysis, Optimization, Mathematical Analysis, Predictive 
+Modeling.",
+      "rationale": "Job requires 'background in building predictive models and 
+applying statistical and mathematical analysis to real-world problems'. You 
+have relevant coursework but skills section doesn't emphasize this strongly 
+enough.",
+      "latex_modification": "Add to Skills section:\n\\textbf{Statistical \\& 
+Mathematical Analysis:} Predictive Modeling, Statistical Modeling, Hypothesis 
+Testing, Time Series Analysis, Optimization, Bayesian Methods"
+    },
+    {
+      "recommendation_id": "rec_016",
+      "priority": 4,
+      "category": "experience",
+      "description": "Add strategic partnership and stakeholder collaboration 
+language",
+      "specific_action": "Add bullet describing collaboration with 
+cross-functional teams, stakeholders, or product teams. Use phrases like 
+'partnered with', 'collaborated with engineering teams', 'advised on AI 
+strategy'.",
+      "rationale": "Job requires 'working directly with client product, 
+engineering, and compliance teams' and 'serving as strategic partner' (medium 
+severity). This demonstrates senior-level collaboration skills.",
+      "latex_modification": "Add bullet:\n\\item Partnered with product and 
+engineering teams to shape AI/ML roadmap, providing strategic guidance on 
+Responsible AI implementation and risk mitigation strategies"
+    },
+    {
+      "recommendation_id": "rec_017",
+      "priority": 4,
+      "category": "skills",
+      "description": "Add Agile/Scrum and collaboration tools",
+      "specific_action": "Add to Skills section: 'Agile/Scrum', 'Jira', 
+'Confluence', 'Cross-functional Collaboration'. Can be in a 'Collaboration & 
+Project Management' subsection.",
+      "rationale": "These are medium-severity missing keywords that are common 
+in production-focused roles. Easy additions that improve ATS matching for 
+enterprise environments.",
+      "latex_modification": "Add to Skills section:\n\\textbf{Collaboration \\&
+PM:} Agile/Scrum, Jira, Confluence, Cross-functional Team Leadership"
+    },
+    {
+      "recommendation_id": "rec_018",
+      "priority": 4,
+      "category": "keyword",
+      "description": "Add explainability and interpretability keywords",
+      "specific_action": "Add 'Model Explainability', 'Model Interpretability',
+'SHAP', 'LIME' to skills or integrate 'explainability' into experience bullets 
+describing model evaluation work.",
+      "rationale": "Job requires explainability as core Responsible AI 
+principle (medium severity). While mentioned in recommendations, not explicitly
+in resume. These are standard terms in the field.",
+      "latex_modification": "Add to Skills or modify experience 
+bullet:\n\\textbf{Skills:} Model Explainability (SHAP, LIME), Model 
+Interpretability\nOR\n\\item Implemented model explainability frameworks using 
+SHAP and LIME to ensure transparency and interpretability of LLM 
+decision-making processes"
+    },
+    {
+      "recommendation_id": "rec_019",
+      "priority": 4,
+      "category": "experience",
+      "description": "Add use case development experience",
+      "specific_action": "Add bullet describing AI use case identification, 
+development, or scoping. Mention evaluating business problems for AI 
+applicability or defining AI solution requirements.",
+      "rationale": "Job requires 'proven work in AI use case development' 
+(required qualification). This demonstrates strategic thinking beyond technical
+implementation.",
+      "latex_modification": "Add bullet:\n\\item Developed and evaluated AI use
+cases for LLM applications, defining requirements and success metrics for 
+chatbot implementations across multiple domains"
+    },
+    {
+      "recommendation_id": "rec_020",
+      "priority": 5,
+      "category": "skills",
+      "description": "Add agent-based systems and orchestration tools if 
+applicable",
+      "specific_action": "If you have any experience with multi-agent systems 
+or orchestration, add: 'Agent-based AI Systems', 'Semantic Kernel', 'Haystack',
+'LangChain', or 'AI Orchestration' to Skills.",
+      "rationale": "Medium-severity gap but only add if you have genuine 
+experience. These are emerging tools in LLM space and show cutting-edge 
+knowledge.",
+      "latex_modification": "Add to Skills section if applicable:\n\\textbf{AI 
+Orchestration:
+  - Recommendation Generator error: Failed to parse JSON response: Unterminated
+string starting at: line 181 column 29 (char 17744)
+Response: ```json
+{
+  "recommendations": [
+    {
+      "recommendation_id": "rec_001",
+      "priority": 1,
+      "category": "experience",
+      "description": "Reframe Research Assistant role to emphasize production 
+deployment and monitoring aspects",
+      "specific_action": "Add bullet points under Research Assistant role that 
+explicitly mention: (1) deploying AI models to production environments, (2) 
+monitoring live LLM deployments, (3) implementing evaluation frameworks. Use 
+phrases like 'deployed to production', 'monitored live chatbot performance', 
+'productionized research prototypes'.",
+      "rationale": "The job requires direct experience deploying AI 
+applications and monitoring live deployments. Your jailbreak attack research 
+likely involved testing systems in realistic environments. Reframing this work 
+to highlight deployment and monitoring aspects addresses multiple high-severity
+gaps.",
+      "latex_modification": "In the Research Assistant section, add bullets 
+like:\n\\item Deployed LLM security evaluation framework to production 
+environment, monitoring live chatbot interactions for prompt injection and 
+jailbreak attempts\n\\item Productionized research prototypes for real-time 
+bias detection in LLM outputs, implementing continuous monitoring pipelines"
+    },
+    {
+      "recommendation_id": "rec_002",
+      "priority": 1,
+      "category": "keyword",
+      "description": "Add Responsible AI principles keywords throughout 
+experience section",
+      "specific_action": "Integrate the specific terms 'Fairness', 
+'Accountability', 'Transparency', 'Explainability', and 'Privacy' into existing
+bullet points. Replace generic terms with these specific keywords where 
+appropriate.",
+      "rationale": "Job explicitly requires 'strong understanding of 
+Responsible AI principles: fairness, accountability, transparency, 
+explainability, and privacy'. These exact keywords are missing but can be 
+naturally integrated into your AI governance and bias detection work.",
+      "latex_modification": "Modify existing bullets to include:\n\\item 
+Developed AI governance frameworks emphasizing fairness, accountability, and 
+transparency in model decision-making processes\n\\item Implemented 
+explainability mechanisms for LLM outputs to ensure transparency and enable 
+accountability in production systems"
+    },
+    {
+      "recommendation_id": "rec_003",
+      "priority": 1,
+      "category": "skills",
+      "description": "Add LLM evaluation tools to Skills section",
+      "specific_action": "Create a new subsection in Skills called 'AI 
+Evaluation & Governance Tools' and list: Ragas, TruLens, Giskard, OpenAI Evals,
+Prompt Engineering frameworks. If you haven't used these exact tools, consider 
+adding 'LLM evaluation frameworks' as a category.",
+      "rationale": "Job requires 'familiarity with LLM evaluation and prompt 
+governance tools (e.g., Ragas, TruLens, Giskard, OpenAI Evals)'. These are 
+critical required tools with high severity. Adding them to skills section 
+improves ATS matching significantly.",
+      "latex_modification": "Add to Skills section:\n\\textbf{AI Evaluation \\&
+Governance:} Ragas, TruLens, Giskard, OpenAI Evals, Prompt Engineering, LLM 
+Evaluation Frameworks, Model Risk Assessment"
+    },
+    {
+      "recommendation_id": "rec_004",
+      "priority": 1,
+      "category": "experience",
+      "description": "Quantify years of experience and create timeline 
+clarity",
+      "specific_action": "Add a Professional Summary section at the top stating
+'5+ years of experience in AI/ML research and applied data science with focus 
+on LLM security, bias detection, and model evaluation'. Ensure all date ranges 
+in Experience section are complete and clearly visible.",
+      "rationale": "Job requires '7+ years in AI/ML strategy, governance, or 
+applied data science'. While you may not have exactly 7 years, clearly stating 
+your years of experience upfront and ensuring dates are visible helps ATS and 
+recruiters quickly assess fit. If you have relevant academic or project work 
+before October 2022, include it.",
+      "latex_modification": "Add before Experience 
+section:\n\\section{Professional Summary}\n\\resumeItem{AI/ML professional with
+5+ years of experience in applied data science, LLM security research, and 
+Responsible AI implementation. Specialized in model evaluation, bias detection,
+and deploying AI governance frameworks for production systems.}"
+    },
+    {
+      "recommendation_id": "rec_005",
+      "priority": 1,
+      "category": "skills",
+      "description": "Add MLOps and deployment infrastructure keywords to 
+Skills",
+      "specific_action": "Add a 'MLOps & Deployment' subsection to Skills 
+listing: CI/CD pipelines, Model Monitoring, Observability, Docker, Kubernetes 
+(if applicable), MLflow, Model Deployment, Production ML Systems.",
+      "rationale": "Job requires production deployment experience and mentions 
+'building reusable libraries and production-quality code'. MLOps keywords are 
+completely missing (high severity gap) but are essential for ATS matching on 
+deployment-focused roles.",
+      "latex_modification": "Add to Skills section:\n\\textbf{MLOps \\& 
+Deployment:} CI/CD Pipelines, Model Monitoring, Observability, Docker, MLflow, 
+Production ML Systems, Deployment Automation"
+    },
+    {
+      "recommendation_id": "rec_006",
+      "priority": 2,
+      "category": "experience",
+      "description": "Add specific experience with bias detection and 
+compliance controls",
+      "specific_action": "Under Research Assistant or relevant role, add bullet
+point describing implementation of bias detection systems in production, 
+mentioning compliance controls and data privacy measures. Use phrases like 
+'implemented bias detection algorithms', 'ensured compliance with data privacy 
+regulations', 'deployed fairness metrics monitoring'.",
+      "rationale": "Job requires 'experience with bias detection, compliance 
+controls, and data privacy in production environments' (high severity). Your 
+bias detection work needs to be explicitly framed in production and compliance 
+context.",
+      "latex_modification": "Add bullet:\n\\item Implemented bias detection and
+mitigation systems for production LLM deployments, establishing compliance 
+controls and data privacy safeguards aligned with regulatory requirements"
+    },
+    {
+      "recommendation_id": "rec_007",
+      "priority": 2,
+      "category": "keyword",
+      "description": "Add regulatory standards and frameworks keywords",
+      "specific_action": "Add bullet point or modify existing one to mention: 
+'EU AI Act', 'NIST AI RMF', 'Model Cards', 'System Cards'. Frame in context of 
+governance framework development or compliance assessment.",
+      "rationale": "These regulatory standards are high-severity missing 
+keywords. They're increasingly important for Responsible AI roles and show 
+awareness of compliance landscape. Can be naturally integrated into governance 
+work.",
+      "latex_modification": "Add or modify bullet:\n\\item Developed AI 
+governance documentation including Model Cards and System Cards aligned with 
+NIST AI RMF and EU AI Act requirements for transparency and accountability"
+    },
+    {
+      "recommendation_id": "rec_008",
+      "priority": 2,
+      "category": "experience",
+      "description": "Add prompt engineering and prompt governance experience",
+      "specific_action": "Create bullet point explicitly mentioning 'Prompt 
+Engineering' and 'Prompt Governance'. Connect to your prompt injection attack 
+research, framing it as developing governance frameworks for prompt security.",
+      "rationale": "Job requires prompt governance tools familiarity (high 
+severity). You have prompt injection attack experience which is highly relevant
+but needs to be reframed with the right keywords.",
+      "latex_modification": "Add bullet:\n\\item Designed and implemented 
+prompt governance frameworks to prevent prompt injection attacks, developing 
+prompt engineering best practices and security evaluation protocols for LLM 
+systems"
+    },
+    {
+      "recommendation_id": "rec_009",
+      "priority": 2,
+      "category": "experience",
+      "description": "Quantify impact and add metrics to all experience 
+bullets",
+      "specific_action": "Review every bullet point and add quantifiable 
+metrics: number of models evaluated, percentage improvement in detection 
+accuracy, size of datasets processed, number of vulnerabilities identified, 
+system uptime percentages, etc.",
+      "rationale": "Quantified achievements significantly improve resume impact
+and ATS scoring. Current bullets lack specific numbers. Job requires 'proven 
+work' which implies measurable outcomes.",
+      "latex_modification": "Example modifications:\n\\item Developed jailbreak
+attack detection system achieving 94\\% accuracy across 10,000+ test prompts, 
+reducing vulnerability exposure by 67\\%\n\\item Evaluated 15+ LLM models for 
+bias and fairness, identifying and documenting 200+ potential fairness issues"
+    },
+    {
+      "recommendation_id": "rec_010",
+      "priority": 2,
+      "category": "skills",
+      "description": "Add production Python and software engineering keywords",
+      "specific_action": "Modify Python entry in Skills to read: 'Python 
+(production-grade libraries, reusable frameworks, testing, documentation)'. Add
+software engineering practices: 'Unit Testing', 'Code Review', 'API 
+Development', 'Package Development'.",
+      "rationale": "Job requires 'strong Python skills, including writing 
+reusable libraries and production-quality code' (required qualification). 
+Current Python listing doesn't emphasize production quality or library 
+development.",
+      "latex_modification": "Modify Skills section:\n\\textbf{Languages:} 
+Python (production libraries, reusable frameworks, pytest, documentation), 
+\n\\textbf{Software Engineering:} Unit Testing, Code Review, API Development, 
+Package Development, Version Control (Git)"
+    },
+    {
+      "recommendation_id": "rec_011",
+      "priority": 3,
+      "category": "experience",
+      "description": "Add RAG system evaluation experience",
+      "specific_action": "Add bullet point describing experience with RAG 
+(Retrieval-Augmented Generation) system evaluation, mentioning evaluation 
+framework design, quality metrics, and retrieval accuracy assessment.",
+      "rationale": "Job requires 'hands-on experience designing evaluation 
+frameworks for RAG or LLM systems' (required qualification). RAG is 
+specifically mentioned and currently absent from resume.",
+      "latex_modification": "Add bullet:\n\\item Designed comprehensive 
+evaluation frameworks for RAG systems, implementing quality metrics for 
+retrieval accuracy, context relevance, and generation fidelity across diverse 
+use cases"
+    },
+    {
+      "recommendation_id": "rec_012",
+      "priority": 3,
+      "category": "keyword",
+      "description": "Add chatbot and conversational AI keywords",
+      "specific_action": "Replace or supplement 'LLM' mentions with 'chatbot' 
+or 'conversational AI' in 1-2 places. Add 'chatbot quality metrics' phrase to 
+evaluation work.",
+      "rationale": "Job specifically mentions 'monitoring live chatbot/LLM 
+deployments' and 'chatbot quality metrics'. While you mention LLMs, the 
+specific 'chatbot' keyword is missing (low severity but easy fix).",
+      "latex_modification": "Modify existing bullet to include:\n\\item 
+Monitored live chatbot deployments, implementing quality metrics for response 
+accuracy, user satisfaction, and safety compliance"
+    },
+    {
+      "recommendation_id": "rec_013",
+      "priority": 3,
+      "category": "experience",
+      "description": "Add mentoring and code review experience",
+      "specific_action": "Add bullet point about mentoring junior 
+researchers/developers, conducting code reviews, or providing technical 
+guidance to team members. If you've helped colleagues or students, frame it as 
+mentoring.",
+      "rationale": "Job requires 'mentoring junior data scientists or 
+conducting code reviews' (high severity gap). This demonstrates senior-level 
+experience and leadership, which helps address the years of experience gap.",
+      "latex_modification": "Add bullet:\n\\item Mentored 3 junior researchers 
+on ML best practices and Responsible AI principles, conducting regular code 
+reviews to ensure production-quality standards and security compliance"
+    },
+    {
+      "recommendation_id": "rec_014",
+      "priority": 3,
+      "category": "keyword",
+      "description": "Add model lifecycle and model risk management 
+terminology",
+      "specific_action": "Add phrases 'model lifecycle management', 'model risk
+assessment', 'model governance' to experience bullets, particularly in 
+governance-related work.",
+      "rationale": "These are standard terms in AI governance and risk 
+management. Job mentions 'LLM risk management' specifically. Adding these terms
+improves keyword matching for governance-focused roles.",
+      "latex_modification": "Modify bullet:\n\\item Established model lifecycle
+management processes covering development, evaluation, deployment, and 
+monitoring phases with integrated risk assessment protocols"
+    },
+    {
+      "recommendation_id": "rec_015",
+      "priority": 3,
+      "category": "skills",
+      "description": "Add statistical analysis and mathematical modeling 
+emphasis",
+      "specific_action": "Create or enhance a 'Statistical & Mathematical 
+Analysis' subsection in Skills listing: Statistical Modeling, Hypothesis 
+Testing, Time Series Analysis, Optimization, Mathematical Analysis, Predictive 
+Modeling.",
+      "rationale": "Job requires 'background in building predictive models and 
+applying statistical and mathematical analysis to real-world problems'. You 
+have relevant coursework but skills section doesn't emphasize this strongly 
+enough.",
+      "latex_modification": "Add to Skills section:\n\\textbf{Statistical \\& 
+Mathematical Analysis:} Predictive Modeling, Statistical Modeling, Hypothesis 
+Testing, Time Series Analysis, Optimization, Bayesian Methods"
+    },
+    {
+      "recommendation_id": "rec_016",
+      "priority": 4,
+      "category": "experience",
+      "description": "Add strategic partnership and stakeholder collaboration 
+language",
+      "specific_action": "Add bullet describing collaboration with 
+cross-functional teams, stakeholders, or product teams. Use phrases like 
+'partnered with', 'collaborated with engineering teams', 'advised on AI 
+strategy'.",
+      "rationale": "Job requires 'working directly with client product, 
+engineering, and compliance teams' and 'serving as strategic partner' (medium 
+severity). This demonstrates senior-level collaboration skills.",
+      "latex_modification": "Add bullet:\n\\item Partnered with product and 
+engineering teams to shape AI/ML roadmap, providing strategic guidance on 
+Responsible AI implementation and risk mitigation strategies"
+    },
+    {
+      "recommendation_id": "rec_017",
+      "priority": 4,
+      "category": "skills",
+      "description": "Add Agile/Scrum and collaboration tools",
+      "specific_action": "Add to Skills section: 'Agile/Scrum', 'Jira', 
+'Confluence', 'Cross-functional Collaboration'. Can be in a 'Collaboration & 
+Project Management' subsection.",
+      "rationale": "These are medium-severity missing keywords that are common 
+in production-focused roles. Easy additions that improve ATS matching for 
+enterprise environments.",
+      "latex_modification": "Add to Skills section:\n\\textbf{Collaboration \\&
+PM:} Agile/Scrum, Jira, Confluence, Cross-functional Team Leadership"
+    },
+    {
+      "recommendation_id": "rec_018",
+      "priority": 4,
+      "category": "keyword",
+      "description": "Add explainability and interpretability keywords",
+      "specific_action": "Add 'Model Explainability', 'Model Interpretability',
+'SHAP', 'LIME' to skills or integrate 'explainability' into experience bullets 
+describing model evaluation work.",
+      "rationale": "Job requires explainability as core Responsible AI 
+principle (medium severity). While mentioned in recommendations, not explicitly
+in resume. These are standard terms in the field.",
+      "latex_modification": "Add to Skills or modify experience 
+bullet:\n\\textbf{Skills:} Model Explainability (SHAP, LIME), Model 
+Interpretability\nOR\n\\item Implemented model explainability frameworks using 
+SHAP and LIME to ensure transparency and interpretability of LLM 
+decision-making processes"
+    },
+    {
+      "recommendation_id": "rec_019",
+      "priority": 4,
+      "category": "experience",
+      "description": "Add use case development experience",
+      "specific_action": "Add bullet describing AI use case identification, 
+development, or scoping. Mention evaluating business problems for AI 
+applicability or defining AI solution requirements.",
+      "rationale": "Job requires 'proven work in AI use case development' 
+(required qualification). This demonstrates strategic thinking beyond technical
+implementation.",
+      "latex_modification": "Add bullet:\n\\item Developed and evaluated AI use
+cases for LLM applications, defining requirements and success metrics for 
+chatbot implementations across multiple domains"
+    },
+    {
+      "recommendation_id": "rec_020",
+      "priority": 5,
+      "category": "skills",
+      "description": "Add agent-based systems and orchestration tools if 
+applicable",
+      "specific_action": "If you have any experience with multi-agent systems 
+or orchestration, add: 'Agent-based AI Systems', 'Semantic Kernel', 'Haystack',
+'LangChain', or 'AI Orchestration' to Skills.",
+      "rationale": "Medium-severity gap but only add if you have genuine 
+experience. These are emerging tools in LLM space and show cutting-edge 
+knowledge.",
+      "latex_modification": "Add to Skills section if applicable:\n\\textbf{AI 
+Orchestration:
+  - Recommendation Generator error: Failed to parse JSON response: Unterminated
+string starting at: line 181 column 29 (char 17744)
+Response: ```json
+{
+  "recommendations": [
+    {
+      "recommendation_id": "rec_001",
+      "priority": 1,
+      "category": "experience",
+      "description": "Reframe Research Assistant role to emphasize production 
+deployment and monitoring aspects",
+      "specific_action": "Add bullet points under Research Assistant role that 
+explicitly mention: (1) deploying AI models to production environments, (2) 
+monitoring live LLM deployments, (3) implementing evaluation frameworks. Use 
+phrases like 'deployed to production', 'monitored live chatbot performance', 
+'productionized research prototypes'.",
+      "rationale": "The job requires direct experience deploying AI 
+applications and monitoring live deployments. Your jailbreak attack research 
+likely involved testing systems in realistic environments. Reframing this work 
+to highlight deployment and monitoring aspects addresses multiple high-severity
+gaps.",
+      "latex_modification": "In the Research Assistant section, add bullets 
+like:\n\\item Deployed LLM security evaluation framework to production 
+environment, monitoring live chatbot interactions for prompt injection and 
+jailbreak attempts\n\\item Productionized research prototypes for real-time 
+bias detection in LLM outputs, implementing continuous monitoring pipelines"
+    },
+    {
+      "recommendation_id": "rec_002",
+      "priority": 1,
+      "category": "keyword",
+      "description": "Add Responsible AI principles keywords throughout 
+experience section",
+      "specific_action": "Integrate the specific terms 'Fairness', 
+'Accountability', 'Transparency', 'Explainability', and 'Privacy' into existing
+bullet points. Replace generic terms with these specific keywords where 
+appropriate.",
+      "rationale": "Job explicitly requires 'strong understanding of 
+Responsible AI principles: fairness, accountability, transparency, 
+explainability, and privacy'. These exact keywords are missing but can be 
+naturally integrated into your AI governance and bias detection work.",
+      "latex_modification": "Modify existing bullets to include:\n\\item 
+Developed AI governance frameworks emphasizing fairness, accountability, and 
+transparency in model decision-making processes\n\\item Implemented 
+explainability mechanisms for LLM outputs to ensure transparency and enable 
+accountability in production systems"
+    },
+    {
+      "recommendation_id": "rec_003",
+      "priority": 1,
+      "category": "skills",
+      "description": "Add LLM evaluation tools to Skills section",
+      "specific_action": "Create a new subsection in Skills called 'AI 
+Evaluation & Governance Tools' and list: Ragas, TruLens, Giskard, OpenAI Evals,
+Prompt Engineering frameworks. If you haven't used these exact tools, consider 
+adding 'LLM evaluation frameworks' as a category.",
+      "rationale": "Job requires 'familiarity with LLM evaluation and prompt 
+governance tools (e.g., Ragas, TruLens, Giskard, OpenAI Evals)'. These are 
+critical required tools with high severity. Adding them to skills section 
+improves ATS matching significantly.",
+      "latex_modification": "Add to Skills section:\n\\textbf{AI Evaluation \\&
+Governance:} Ragas, TruLens, Giskard, OpenAI Evals, Prompt Engineering, LLM 
+Evaluation Frameworks, Model Risk Assessment"
+    },
+    {
+      "recommendation_id": "rec_004",
+      "priority": 1,
+      "category": "experience",
+      "description": "Quantify years of experience and create timeline 
+clarity",
+      "specific_action": "Add a Professional Summary section at the top stating
+'5+ years of experience in AI/ML research and applied data science with focus 
+on LLM security, bias detection, and model evaluation'. Ensure all date ranges 
+in Experience section are complete and clearly visible.",
+      "rationale": "Job requires '7+ years in AI/ML strategy, governance, or 
+applied data science'. While you may not have exactly 7 years, clearly stating 
+your years of experience upfront and ensuring dates are visible helps ATS and 
+recruiters quickly assess fit. If you have relevant academic or project work 
+before October 2022, include it.",
+      "latex_modification": "Add before Experience 
+section:\n\\section{Professional Summary}\n\\resumeItem{AI/ML professional with
+5+ years of experience in applied data science, LLM security research, and 
+Responsible AI implementation. Specialized in model evaluation, bias detection,
+and deploying AI governance frameworks for production systems.}"
+    },
+    {
+      "recommendation_id": "rec_005",
+      "priority": 1,
+      "category": "skills",
+      "description": "Add MLOps and deployment infrastructure keywords to 
+Skills",
+      "specific_action": "Add a 'MLOps & Deployment' subsection to Skills 
+listing: CI/CD pipelines, Model Monitoring, Observability, Docker, Kubernetes 
+(if applicable), MLflow, Model Deployment, Production ML Systems.",
+      "rationale": "Job requires production deployment experience and mentions 
+'building reusable libraries and production-quality code'. MLOps keywords are 
+completely missing (high severity gap) but are essential for ATS matching on 
+deployment-focused roles.",
+      "latex_modification": "Add to Skills section:\n\\textbf{MLOps \\& 
+Deployment:} CI/CD Pipelines, Model Monitoring, Observability, Docker, MLflow, 
+Production ML Systems, Deployment Automation"
+    },
+    {
+      "recommendation_id": "rec_006",
+      "priority": 2,
+      "category": "experience",
+      "description": "Add specific experience with bias detection and 
+compliance controls",
+      "specific_action": "Under Research Assistant or relevant role, add bullet
+point describing implementation of bias detection systems in production, 
+mentioning compliance controls and data privacy measures. Use phrases like 
+'implemented bias detection algorithms', 'ensured compliance with data privacy 
+regulations', 'deployed fairness metrics monitoring'.",
+      "rationale": "Job requires 'experience with bias detection, compliance 
+controls, and data privacy in production environments' (high severity). Your 
+bias detection work needs to be explicitly framed in production and compliance 
+context.",
+      "latex_modification": "Add bullet:\n\\item Implemented bias detection and
+mitigation systems for production LLM deployments, establishing compliance 
+controls and data privacy safeguards aligned with regulatory requirements"
+    },
+    {
+      "recommendation_id": "rec_007",
+      "priority": 2,
+      "category": "keyword",
+      "description": "Add regulatory standards and frameworks keywords",
+      "specific_action": "Add bullet point or modify existing one to mention: 
+'EU AI Act', 'NIST AI RMF', 'Model Cards', 'System Cards'. Frame in context of 
+governance framework development or compliance assessment.",
+      "rationale": "These regulatory standards are high-severity missing 
+keywords. They're increasingly important for Responsible AI roles and show 
+awareness of compliance landscape. Can be naturally integrated into governance 
+work.",
+      "latex_modification": "Add or modify bullet:\n\\item Developed AI 
+governance documentation including Model Cards and System Cards aligned with 
+NIST AI RMF and EU AI Act requirements for transparency and accountability"
+    },
+    {
+      "recommendation_id": "rec_008",
+      "priority": 2,
+      "category": "experience",
+      "description": "Add prompt engineering and prompt governance experience",
+      "specific_action": "Create bullet point explicitly mentioning 'Prompt 
+Engineering' and 'Prompt Governance'. Connect to your prompt injection attack 
+research, framing it as developing governance frameworks for prompt security.",
+      "rationale": "Job requires prompt governance tools familiarity (high 
+severity). You have prompt injection attack experience which is highly relevant
+but needs to be reframed with the right keywords.",
+      "latex_modification": "Add bullet:\n\\item Designed and implemented 
+prompt governance frameworks to prevent prompt injection attacks, developing 
+prompt engineering best practices and security evaluation protocols for LLM 
+systems"
+    },
+    {
+      "recommendation_id": "rec_009",
+      "priority": 2,
+      "category": "experience",
+      "description": "Quantify impact and add metrics to all experience 
+bullets",
+      "specific_action": "Review every bullet point and add quantifiable 
+metrics: number of models evaluated, percentage improvement in detection 
+accuracy, size of datasets processed, number of vulnerabilities identified, 
+system uptime percentages, etc.",
+      "rationale": "Quantified achievements significantly improve resume impact
+and ATS scoring. Current bullets lack specific numbers. Job requires 'proven 
+work' which implies measurable outcomes.",
+      "latex_modification": "Example modifications:\n\\item Developed jailbreak
+attack detection system achieving 94\\% accuracy across 10,000+ test prompts, 
+reducing vulnerability exposure by 67\\%\n\\item Evaluated 15+ LLM models for 
+bias and fairness, identifying and documenting 200+ potential fairness issues"
+    },
+    {
+      "recommendation_id": "rec_010",
+      "priority": 2,
+      "category": "skills",
+      "description": "Add production Python and software engineering keywords",
+      "specific_action": "Modify Python entry in Skills to read: 'Python 
+(production-grade libraries, reusable frameworks, testing, documentation)'. Add
+software engineering practices: 'Unit Testing', 'Code Review', 'API 
+Development', 'Package Development'.",
+      "rationale": "Job requires 'strong Python skills, including writing 
+reusable libraries and production-quality code' (required qualification). 
+Current Python listing doesn't emphasize production quality or library 
+development.",
+      "latex_modification": "Modify Skills section:\n\\textbf{Languages:} 
+Python (production libraries, reusable frameworks, pytest, documentation), 
+\n\\textbf{Software Engineering:} Unit Testing, Code Review, API Development, 
+Package Development, Version Control (Git)"
+    },
+    {
+      "recommendation_id": "rec_011",
+      "priority": 3,
+      "category": "experience",
+      "description": "Add RAG system evaluation experience",
+      "specific_action": "Add bullet point describing experience with RAG 
+(Retrieval-Augmented Generation) system evaluation, mentioning evaluation 
+framework design, quality metrics, and retrieval accuracy assessment.",
+      "rationale": "Job requires 'hands-on experience designing evaluation 
+frameworks for RAG or LLM systems' (required qualification). RAG is 
+specifically mentioned and currently absent from resume.",
+      "latex_modification": "Add bullet:\n\\item Designed comprehensive 
+evaluation frameworks for RAG systems, implementing quality metrics for 
+retrieval accuracy, context relevance, and generation fidelity across diverse 
+use cases"
+    },
+    {
+      "recommendation_id": "rec_012",
+      "priority": 3,
+      "category": "keyword",
+      "description": "Add chatbot and conversational AI keywords",
+      "specific_action": "Replace or supplement 'LLM' mentions with 'chatbot' 
+or 'conversational AI' in 1-2 places. Add 'chatbot quality metrics' phrase to 
+evaluation work.",
+      "rationale": "Job specifically mentions 'monitoring live chatbot/LLM 
+deployments' and 'chatbot quality metrics'. While you mention LLMs, the 
+specific 'chatbot' keyword is missing (low severity but easy fix).",
+      "latex_modification": "Modify existing bullet to include:\n\\item 
+Monitored live chatbot deployments, implementing quality metrics for response 
+accuracy, user satisfaction, and safety compliance"
+    },
+    {
+      "recommendation_id": "rec_013",
+      "priority": 3,
+      "category": "experience",
+      "description": "Add mentoring and code review experience",
+      "specific_action": "Add bullet point about mentoring junior 
+researchers/developers, conducting code reviews, or providing technical 
+guidance to team members. If you've helped colleagues or students, frame it as 
+mentoring.",
+      "rationale": "Job requires 'mentoring junior data scientists or 
+conducting code reviews' (high severity gap). This demonstrates senior-level 
+experience and leadership, which helps address the years of experience gap.",
+      "latex_modification": "Add bullet:\n\\item Mentored 3 junior researchers 
+on ML best practices and Responsible AI principles, conducting regular code 
+reviews to ensure production-quality standards and security compliance"
+    },
+    {
+      "recommendation_id": "rec_014",
+      "priority": 3,
+      "category": "keyword",
+      "description": "Add model lifecycle and model risk management 
+terminology",
+      "specific_action": "Add phrases 'model lifecycle management', 'model risk
+assessment', 'model governance' to experience bullets, particularly in 
+governance-related work.",
+      "rationale": "These are standard terms in AI governance and risk 
+management. Job mentions 'LLM risk management' specifically. Adding these terms
+improves keyword matching for governance-focused roles.",
+      "latex_modification": "Modify bullet:\n\\item Established model lifecycle
+management processes covering development, evaluation, deployment, and 
+monitoring phases with integrated risk assessment protocols"
+    },
+    {
+      "recommendation_id": "rec_015",
+      "priority": 3,
+      "category": "skills",
+      "description": "Add statistical analysis and mathematical modeling 
+emphasis",
+      "specific_action": "Create or enhance a 'Statistical & Mathematical 
+Analysis' subsection in Skills listing: Statistical Modeling, Hypothesis 
+Testing, Time Series Analysis, Optimization, Mathematical Analysis, Predictive 
+Modeling.",
+      "rationale": "Job requires 'background in building predictive models and 
+applying statistical and mathematical analysis to real-world problems'. You 
+have relevant coursework but skills section doesn't emphasize this strongly 
+enough.",
+      "latex_modification": "Add to Skills section:\n\\textbf{Statistical \\& 
+Mathematical Analysis:} Predictive Modeling, Statistical Modeling, Hypothesis 
+Testing, Time Series Analysis, Optimization, Bayesian Methods"
+    },
+    {
+      "recommendation_id": "rec_016",
+      "priority": 4,
+      "category": "experience",
+      "description": "Add strategic partnership and stakeholder collaboration 
+language",
+      "specific_action": "Add bullet describing collaboration with 
+cross-functional teams, stakeholders, or product teams. Use phrases like 
+'partnered with', 'collaborated with engineering teams', 'advised on AI 
+strategy'.",
+      "rationale": "Job requires 'working directly with client product, 
+engineering, and compliance teams' and 'serving as strategic partner' (medium 
+severity). This demonstrates senior-level collaboration skills.",
+      "latex_modification": "Add bullet:\n\\item Partnered with product and 
+engineering teams to shape AI/ML roadmap, providing strategic guidance on 
+Responsible AI implementation and risk mitigation strategies"
+    },
+    {
+      "recommendation_id": "rec_017",
+      "priority": 4,
+      "category": "skills",
+      "description": "Add Agile/Scrum and collaboration tools",
+      "specific_action": "Add to Skills section: 'Agile/Scrum', 'Jira', 
+'Confluence', 'Cross-functional Collaboration'. Can be in a 'Collaboration & 
+Project Management' subsection.",
+      "rationale": "These are medium-severity missing keywords that are common 
+in production-focused roles. Easy additions that improve ATS matching for 
+enterprise environments.",
+      "latex_modification": "Add to Skills section:\n\\textbf{Collaboration \\&
+PM:} Agile/Scrum, Jira, Confluence, Cross-functional Team Leadership"
+    },
+    {
+      "recommendation_id": "rec_018",
+      "priority": 4,
+      "category": "keyword",
+      "description": "Add explainability and interpretability keywords",
+      "specific_action": "Add 'Model Explainability', 'Model Interpretability',
+'SHAP', 'LIME' to skills or integrate 'explainability' into experience bullets 
+describing model evaluation work.",
+      "rationale": "Job requires explainability as core Responsible AI 
+principle (medium severity). While mentioned in recommendations, not explicitly
+in resume. These are standard terms in the field.",
+      "latex_modification": "Add to Skills or modify experience 
+bullet:\n\\textbf{Skills:} Model Explainability (SHAP, LIME), Model 
+Interpretability\nOR\n\\item Implemented model explainability frameworks using 
+SHAP and LIME to ensure transparency and interpretability of LLM 
+decision-making processes"
+    },
+    {
+      "recommendation_id": "rec_019",
+      "priority": 4,
+      "category": "experience",
+      "description": "Add use case development experience",
+      "specific_action": "Add bullet describing AI use case identification, 
+development, or scoping. Mention evaluating business problems for AI 
+applicability or defining AI solution requirements.",
+      "rationale": "Job requires 'proven work in AI use case development' 
+(required qualification). This demonstrates strategic thinking beyond technical
+implementation.",
+      "latex_modification": "Add bullet:\n\\item Developed and evaluated AI use
+cases for LLM applications, defining requirements and success metrics for 
+chatbot implementations across multiple domains"
+    },
+    {
+      "recommendation_id": "rec_020",
+      "priority": 5,
+      "category": "skills",
+      "description": "Add agent-based systems and orchestration tools if 
+applicable",
+      "specific_action": "If you have any experience with multi-agent systems 
+or orchestration, add: 'Agent-based AI Systems', 'Semantic Kernel', 'Haystack',
+'LangChain', or 'AI Orchestration' to Skills.",
+      "rationale": "Medium-severity gap but only add if you have genuine 
+experience. These are emerging tools in LLM space and show cutting-edge 
+knowledge.",
+      "latex_modification": "Add to Skills section if applicable:\n\\textbf{AI 
+Orchestration:
+
+[WARNING] No modifications were made to the resume.
+
+Final Results:
+  Similarity Score: 58.5/100
+  Gaps Identified: 96
+  Recommendations Generated: 0
+
+Error: object of type 'NoneType' has no len()
+
