@@ -56,6 +56,16 @@ def optimize(
         min=1,
         max=5,
     ),
+    gap_selection: bool = typer.Option(
+        True,
+        "--gap-selection/--no-gap-selection",
+        help="Interactive gap selection before generating recommendations",
+    ),
+    auto_gap_severity: Optional[str] = typer.Option(
+        None,
+        "--auto-gap-severity",
+        help="Auto-select gaps by severity (high, medium, low)",
+    ),
     show_diff: bool = typer.Option(
         True,
         "--show-diff/--no-diff",
@@ -90,7 +100,9 @@ def optimize(
             resume_tex=resume_tex,
             job_description=job_description,
             resume_path=str(resume),
-            job_path=str(job)
+            job_path=str(job),
+            interactive_gap_selection=gap_selection and interactive,
+            auto_select_gap_severity=auto_gap_severity or ""
         )
 
         # Check for errors
@@ -103,6 +115,7 @@ def optimize(
         recommendations = state.get("recommendations", [])
         similarity_score = state.get("similarity_score", 0)
         gaps = state.get("identified_gaps", [])
+        selected_gaps = state.get("user_selected_gaps")
 
         # Phase 2: Interactive selection (if enabled)
         if interactive and recommendations:
@@ -137,10 +150,10 @@ def optimize(
             display_diff(
                 original=resume_tex,
                 modified=modified_resume,
-                applied_changes=applied_changes,
-                similarity_score=similarity_score,
-                gaps_count=len(gaps),
-                recommendations_count=len(recommendations)
+                applied_changes=applied_changes or [],
+                similarity_score=similarity_score or 0.0,
+                gaps_count=len(gaps) if gaps else 0,
+                recommendations_count=len(recommendations) if recommendations else 0
             )
 
         # Save output
@@ -157,6 +170,8 @@ def optimize(
         console.print(f"\n[bold]Final Results:[/bold]")
         console.print(f"  Similarity Score: {similarity_score:.1f}/100")
         console.print(f"  Gaps Identified: {len(gaps)}")
+        if selected_gaps is not None:
+            console.print(f"  Gaps Selected: {len(selected_gaps)}")
         console.print(f"  Recommendations Generated: {len(recommendations)}")
         console.print(f"  Changes Applied: {len(applied_changes)}\n")
 

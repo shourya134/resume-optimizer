@@ -33,7 +33,27 @@ class RecommendationGeneratorAgent:
             state["workflow_stage"] = "generating"
 
             # Get analysis data
-            gaps = state.get("identified_gaps", [])
+            all_gaps = state.get("identified_gaps", [])
+            selected_gap_ids = state.get("user_selected_gaps")
+
+            # Filter to only selected gaps if user made a selection
+            if selected_gap_ids is not None:
+                gaps = []
+                for gap_id in selected_gap_ids:
+                    try:
+                        # Extract index from "gap_N" format
+                        index = int(gap_id.split("_")[1])
+                        if 0 <= index < len(all_gaps):
+                            gaps.append(all_gaps[index])
+                    except (ValueError, IndexError):
+                        print(f"[WARNING] Invalid gap ID: {gap_id}")
+
+                print(f"[OK] Generating recommendations for {len(gaps)} selected gaps (out of {len(all_gaps)} total)")
+            else:
+                # No selection made, use all gaps
+                gaps = all_gaps
+                print(f"[OK] Generating recommendations for all {len(gaps)} gaps")
+
             resume_sections = state.get("resume_sections", [])
             job_requirements = state.get("job_requirements", [])
             similarity_score = state.get("similarity_score", 0)
@@ -71,10 +91,11 @@ class RecommendationGeneratorAgent:
             system_prompt = get_system_prompt("recommendation_generator")
 
             # Call Claude to generate recommendations
+            # Increased token limit to handle larger responses without truncation
             response = self.client.generate_structured(
                 prompt=prompt,
                 system_prompt=system_prompt,
-                max_tokens=4096
+                max_tokens=6000
             )
 
             # Extract recommendations

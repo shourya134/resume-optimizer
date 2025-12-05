@@ -9,7 +9,7 @@ import os
 from pathlib import Path
 
 
-def setup_logger(name: str = "resume_optimizer", level: str = None) -> logging.Logger:
+def setup_logger(name: str, level: str) -> logging.Logger:
     """
     Set up and configure logger.
 
@@ -20,10 +20,6 @@ def setup_logger(name: str = "resume_optimizer", level: str = None) -> logging.L
     Returns:
         Configured logger
     """
-    # Get log level from environment or use default
-    if level is None:
-        level = os.getenv("LOG_LEVEL", "INFO")
-
     logger = logging.getLogger(name)
     logger.setLevel(getattr(logging, level.upper()))
 
@@ -43,7 +39,7 @@ def setup_logger(name: str = "resume_optimizer", level: str = None) -> logging.L
     return logger
 
 
-def log_workflow_step(agent_name: str, message: str, level: str = "INFO"):
+def log_workflow_step(agent_name: str, message: str, level: str):
     """
     Log a workflow step.
 
@@ -52,6 +48,9 @@ def log_workflow_step(agent_name: str, message: str, level: str = "INFO"):
         message: Log message
         level: Log level
     """
-    logger = setup_logger()
+    logger = setup_logger(
+        name="resume_optimizer",
+        level=os.getenv("LOG_LEVEL", "INFO")
+    )
     log_func = getattr(logger, level.lower())
     log_func(f"[{agent_name}] {message}")

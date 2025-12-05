@@ -49,18 +49,18 @@ class ClaudeClient:
     def generate(
         self,
         prompt: str,
-        system_prompt: Optional[str] = None,
-        max_tokens: Optional[int] = None,
-        temperature: Optional[float] = None,
+        system_prompt: str,
+        max_tokens: int,
+        temperature: float,
     ) -> str:
         """
         Generate a response from Claude.
 
         Args:
             prompt: The user prompt
-            system_prompt: Optional system prompt to guide behavior
-            max_tokens: Override default max_tokens
-            temperature: Override default temperature
+            system_prompt: System prompt to guide behavior
+            max_tokens: Maximum tokens in response
+            temperature: Sampling temperature (0-1)
 
         Returns:
             The generated text response
@@ -71,13 +71,11 @@ class ClaudeClient:
         try:
             message_params = {
                 "model": self.model,
-                "max_tokens": max_tokens or self.max_tokens,
-                "temperature": temperature or self.temperature,
+                "max_tokens": max_tokens,
+                "temperature": temperature,
                 "messages": [{"role": "user", "content": prompt}],
+                "system": system_prompt
             }
-
-            if system_prompt:
-                message_params["system"] = system_prompt
 
             response = self.client.messages.create(**message_params)
 
@@ -90,18 +88,16 @@ class ClaudeClient:
     def generate_structured(
         self,
         prompt: str,
-        system_prompt: Optional[str] = None,
-        expected_format: str = "json",
-        max_tokens: Optional[int] = None,
+        system_prompt: str,
+        max_tokens: int,
     ) -> Dict[str, Any]:
         """
         Generate a structured response (JSON) from Claude.
 
         Args:
             prompt: The user prompt
-            system_prompt: Optional system prompt
-            expected_format: Expected format (currently only "json")
-            max_tokens: Override default max_tokens
+            system_prompt: System prompt to guide behavior
+            max_tokens: Maximum tokens in response
 
         Returns:
             Parsed JSON response as dictionary
@@ -138,21 +134,21 @@ class ClaudeClient:
     def extract_keywords(
         self,
         text: str,
-        context: Optional[str] = None,
-        max_keywords: int = 20,
+        context: str,
+        max_keywords: int,
     ) -> List[str]:
         """
         Extract important keywords from text using Claude.
 
         Args:
             text: The text to analyze
-            context: Optional context (e.g., "resume" or "job description")
+            context: Context description (e.g., "resume" or "job description")
             max_keywords: Maximum number of keywords to extract
 
         Returns:
             List of extracted keywords
         """
-        prompt = f"""Extract the {max_keywords} most important keywords and key phrases from the following {context or 'text'}.
+        prompt = f"""Extract the {max_keywords} most important keywords and key phrases from the following {context}.
 Focus on:
 - Technical skills and tools
 - Industry-specific terms
@@ -165,7 +161,11 @@ Text:
 Return only a JSON array of keywords, like: ["keyword1", "keyword2", ...]"""
 
         try:
-            result = self.generate_structured(prompt)
+            result = self.generate_structured(
+                prompt=prompt,
+                system_prompt="You are a keyword extraction expert.",
+                max_tokens=2000
+            )
             if isinstance(result, list):
                 return result
             elif isinstance(result, dict) and "keywords" in result:
@@ -180,7 +180,7 @@ Return only a JSON array of keywords, like: ["keyword1", "keyword2", ...]"""
         self,
         text1: str,
         text2: str,
-        context: Optional[str] = None,
+        context: str,
     ) -> float:
         """
         Calculate semantic similarity between two texts using Claude.
@@ -188,12 +188,12 @@ Return only a JSON array of keywords, like: ["keyword1", "keyword2", ...]"""
         Args:
             text1: First text (e.g., resume)
             text2: Second text (e.g., job description)
-            context: Optional context for the comparison
+            context: Context for the comparison
 
         Returns:
             Similarity score from 0 to 100
         """
-        prompt = f"""Calculate the semantic similarity between these two texts{' for ' + context if context else ''}.
+        prompt = f"""Calculate the semantic similarity between these two texts for {context}.
 
 Text 1:
 {text1}
@@ -209,7 +209,11 @@ Return a JSON object with:
 Example: {{"score": 75, "reasoning": "Strong match on technical skills, missing some required experience"}}"""
 
         try:
-            result = self.generate_structured(prompt, max_tokens=1000)
+            result = self.generate_structured(
+                prompt=prompt,
+                system_prompt="You are a semantic similarity analysis expert.",
+                max_tokens=1000
+            )
             return float(result.get("score", 0))
         except Exception as e:
             print(f"Warning: Similarity calculation failed: {e}")

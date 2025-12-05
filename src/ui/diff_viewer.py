@@ -154,9 +154,12 @@ class DiffViewer:
         self.console.print("\n")
 
 
-def display_diff(original: str, modified: str, applied_changes: List[dict] = None,
-                 similarity_score: float = None, gaps_count: int = None,
-                 recommendations_count: int = None):
+def display_diff(original: str,
+                 modified: str,
+                 applied_changes: List[dict],
+                 similarity_score: float,
+                 gaps_count: int,
+                 recommendations_count: int):
     """
     Main function to display all diff information.
 
@@ -170,19 +173,16 @@ def display_diff(original: str, modified: str, applied_changes: List[dict] = Non
     """
     viewer = DiffViewer()
 
-    # Show stats if provided
-    if similarity_score is not None:
-        changes_count = len(applied_changes) if applied_changes else 0
-        viewer.show_stats(
-            similarity_score=similarity_score,
-            gaps_count=gaps_count or 0,
-            recommendations_count=recommendations_count or 0,
-            changes_count=changes_count
-        )
+    # Show stats
+    viewer.show_stats(
+        similarity_score=similarity_score,
+        gaps_count=gaps_count,
+        recommendations_count=recommendations_count,
+        changes_count=len(applied_changes)
+    )
 
     # Show changes summary
-    if applied_changes:
-        viewer.show_changes_summary(applied_changes)
+    viewer.show_changes_summary(applied_changes)
 
     # Show diff
     viewer.show_diff(original, modified)

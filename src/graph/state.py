@@ -72,6 +72,9 @@ class AgentState(TypedDict):
     keyword_overlap: Optional[float]  # Keyword match percentage
     identified_gaps: Annotated[List[Gap], operator.add]  # Gaps found (appendable)
 
+    # Gap selection (for interactive mode)
+    user_selected_gaps: Optional[List[str]]  # IDs of selected gaps ("gap_0", "gap_1", etc.)
+
     # Output from Recommendation Generator Agent
     recommendations: Annotated[List[Recommendation], operator.add]  # Generated recommendations
 
@@ -87,6 +90,10 @@ class AgentState(TypedDict):
     # User selections (for interactive mode)
     user_accepted_recommendations: Optional[List[str]]  # IDs of accepted recommendations
     user_rejected_recommendations: Optional[List[str]]  # IDs of rejected recommendations
+
+    # Workflow control flags
+    interactive_gap_selection: Optional[bool]  # Enable interactive gap selection
+    auto_select_gap_severity: Optional[str]  # Auto-select by severity ("high", "medium", "low")
 
 
 def create_initial_state(resume_tex: str, job_description: str,
@@ -126,4 +133,7 @@ def create_initial_state(resume_tex: str, job_description: str,
         errors=[],
         user_accepted_recommendations=None,
         user_rejected_recommendations=None,
+        user_selected_gaps=None,
+        interactive_gap_selection=True,  # Default to interactive
+        auto_select_gap_severity=None,
     )

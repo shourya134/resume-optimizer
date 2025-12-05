@@ -11,6 +11,7 @@ from ..agents.supervisor import validate_inputs_node, finalize_node
 from ..agents.latex_parser import parse_resume_node
 from ..agents.job_analyzer import analyze_job_node
 from ..agents.gap_analyzer import analyze_gaps_node
+from ..agents.gap_selector import select_gaps_node
 from ..agents.recommendation_generator import generate_recommendations_node
 from ..agents.latex_editor import apply_recommendations_node
 
@@ -68,6 +69,37 @@ def should_apply_edits(state: AgentState) -> Literal["apply_edits", "skip_edits"
         return "skip_edits"
 
 
+def should_select_gaps(state: AgentState) -> Literal["select_gaps", "generate_recommendations"]:
+    """
+    Routing function to determine if user should select gaps interactively.
+
+    Args:
+        state: Current agent state
+
+    Returns:
+        "select_gaps" for interactive mode, "generate_recommendations" for auto mode
+    """
+    gaps = state.get("identified_gaps", [])
+
+    # If no gaps, skip to recommendations (which will be empty)
+    if len(gaps) == 0:
+        return "generate_recommendations"
+
+    # If user has already selected gaps (resuming workflow), skip selection
+    if state.get("user_selected_gaps") is not None:
+        return "generate_recommendations"
+
+    # Check if interactive mode is enabled
+    # Default to interactive mode unless explicitly disabled
+    interactive_mode = state.get("interactive_gap_selection", True)
+
+    if interactive_mode:
+        return "select_gaps"
+    else:
+        # Auto mode: skip gap selection, use all gaps
+        return "generate_recommendations"
+
+
 def create_workflow() -> StateGraph:
     """
     Create and compile the LangGraph workflow.
@@ -83,6 +115,7 @@ def create_workflow() -> StateGraph:
     workflow.add_node("parse_resume", parse_resume_node)
     workflow.add_node("analyze_job", analyze_job_node)
     workflow.add_node("analyze_gaps", analyze_gaps_node)
+    workflow.add_node("select_gaps", select_gaps_node)
     workflow.add_node("generate_recommendations", generate_recommendations_node)
     workflow.add_node("apply_recommendations", apply_recommendations_node)
     workflow.add_node("finalize", finalize_node)
@@ -108,8 +141,18 @@ def create_workflow() -> StateGraph:
     # After job analysis, run gap analysis
     workflow.add_edge("analyze_job", "analyze_gaps")
 
-    # After gap analysis, generate recommendations
-    workflow.add_edge("analyze_gaps", "generate_recommendations")
+    # After gap analysis, decide whether to select gaps interactively
+    workflow.add_conditional_edges(
+        "analyze_gaps",
+        should_select_gaps,
+        {
+            "select_gaps": "select_gaps",
+            "generate_recommendations": "generate_recommendations"
+        }
+    )
+
+    # After gap selection, proceed to recommendations
+    workflow.add_edge("select_gaps", "generate_recommendations")
 
     # After recommendations, decide whether to apply edits
     workflow.add_conditional_edges(
@@ -131,16 +174,22 @@ def create_workflow() -> StateGraph:
     return workflow.compile()
 
 
-def run_workflow(resume_tex: str, job_description: str,
-                 resume_path: str = None, job_path: str = None) -> AgentState:
+def run_workflow(resume_tex: str,
+                 job_description: str,
+                 resume_path: str,
+                 job_path: str,
+                 interactive_gap_selection: bool = True,
+                 auto_select_gap_severity: str = "") -> AgentState:
     """
     Run the complete resume optimization workflow.
 
     Args:
         resume_tex: LaTeX resume content
         job_description: Job description text
-        resume_path: Optional path to resume file
-        job_path: Optional path to job description file
+        resume_path: Path to resume file
+        job_path: Path to job description file
+        interactive_gap_selection: Enable interactive gap selection
+        auto_select_gap_severity: Auto-select gaps by severity (high, medium, low)
 
     Returns:
         Final agent state with results
@@ -154,6 +203,9 @@ def run_workflow(resume_tex: str, job_description: str,
         resume_path=resume_path,
         job_path=job_path
     )
+    initial_state["interactive_gap_selection"] = interactive_gap_selection
+    if auto_select_gap_severity:
+        initial_state["auto_select_gap_severity"] = auto_select_gap_severity
 
     # Create and run workflow
     print("\n" + "="*60)
@@ -170,8 +222,9 @@ def run_workflow_with_user_selection(
     resume_tex: str,
     job_description: str,
     accepted_recommendation_ids: list,
-    resume_path: str = None,
-    job_path: str = None
+    resume_path: str,
+    job_path: str,
+    selected_gap_ids: list = None
 ) -> AgentState:
     """
     Run workflow up to recommendations, then apply user-selected changes.
@@ -185,8 +238,9 @@ def run_workflow_with_user_selection(
         resume_tex: LaTeX resume content
         job_description: Job description text
         accepted_recommendation_ids: List of recommendation IDs to apply
-        resume_path: Optional path to resume file
-        job_path: Optional path to job description file
+        resume_path: Path to resume file
+        job_path: Path to job description file
+        selected_gap_ids: List of selected gap IDs (optional)
 
     Returns:
         Final agent state with results
@@ -201,6 +255,9 @@ def run_workflow_with_user_selection(
         job_path=job_path
     )
     initial_state["user_accepted_recommendations"] = accepted_recommendation_ids
+
+    if selected_gap_ids:
+        initial_state["user_selected_gaps"] = selected_gap_ids
 
     print("\n" + "="*60)
     print("APPLYING SELECTED RECOMMENDATIONS")

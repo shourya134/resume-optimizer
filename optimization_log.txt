@@ -769,25 +769,44 @@ use cases"
     },
     {
       "recommendation_id": "rec_012",
-      "priority": 3,
-      "category": "keyword",
-      "description": "Add chatbot and conversational AI keywords",
-      "specific_action": "Replace or supplement 'LLM' mentions with 'chatbot' 
-or 'conversational AI' in 1-2 places. Add 'chatbot quality metrics' phrase to 
-evaluation work.",
-      "rationale": "Job specifically mentions 'monitoring live chatbot/LLM 
-deployments' and 'chatbot quality metrics'. While you mention LLMs, the 
-specific 'chatbot' keyword is missing (low severity but easy fix).",
-      "latex_modification": "Modify existing bullet to include:\n\\item 
-Monitored live chatbot deployments, implementing quality metrics for response 
-accuracy, user satisfaction, and safety compliance"
+      "
+      priority": 3,
+      "
+      category": "keyword",
+      "
+      description": "Add chatbot and conversational AI keywords",
+      "
+      specific_action": "Replace or supplement 'LLM' mentions with 'chatbot' 
+or 'con
+versational AI' in 1-2 places. Add 'chatbot quality metrics' phrase to 
+evaluat
+ion work.",
+      "
+      rationale": "Job specifically mentions 'monitoring live chatbot/LLM 
+deploym
+ents' and 'chatbot quality metrics'. While you mention LLMs, the 
+specifi
+c 'chatbot' keyword is missing (low severity but easy fix).",
+      "
+      latex_modification": "Modify existing bullet to include:\n\\item 
+Monitor
+ed live chatbot deployments, implementing quality metrics for response 
+accurac
+y, user satisfaction, and safety compliance"
     },
+    
     {
-      "recommendation_id": "rec_013",
-      "priority": 3,
-      "category": "experience",
-      "description": "Add mentoring and code review experience",
-      "specific_action": "Add bullet point about mentoring junior 
+      
+      "
+      recommendation_id": "rec_013",
+      "
+      priority": 3,
+      "
+      category": "experience",
+      "
+      description": "Add mentoring and code review experience",
+      "
+      specific_action": "Add bullet point about mentoring junior 
 researchers/developers, conducting code reviews, or providing technical 
 guidance to team members. If you've helped colleagues or students, frame it as 
 mentoring.",
