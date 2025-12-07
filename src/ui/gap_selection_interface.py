@@ -85,7 +85,7 @@ class GapSelectionInterface:
         self.console.print("\n")
 
     def select_gaps(self, gaps: List[Gap],
-                   auto_severity: str = None) -> List[str]:
+                   auto_severity: str) -> List[str]:
         """
         Interactive selection of gaps.
 
@@ -210,7 +210,7 @@ class GapSelectionInterface:
 
 
 def interactive_gap_selection(gaps: List[Gap],
-                              auto_severity: str = None) -> List[str]:
+                              auto_severity: str) -> List[str]:
     """
     Main function for interactive gap selection.
 

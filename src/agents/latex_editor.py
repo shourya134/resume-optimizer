@@ -62,7 +62,7 @@ class LaTeXEditorAgent:
                 }
                 for r in recommendations
             ], indent=2)
-
+            # add a checker for none because most parameters pass none as values
             sections_str = json.dumps([
                 {
                     "section": s["section_name"],

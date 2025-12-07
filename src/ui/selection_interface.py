@@ -87,7 +87,7 @@ class SelectionInterface:
         self.console.print("\n")
 
     def select_recommendations(self, recommendations: List[Recommendation],
-                              auto_select_priority: int = None) -> List[str]:
+                              auto_select_priority: int) -> List[str]:
         """
         Interactive selection of recommendations.
 
@@ -203,7 +203,7 @@ class SelectionInterface:
 
 
 def interactive_selection(recommendations: List[Recommendation],
-                         auto_priority: int = None) -> List[str]:
+                         auto_priority: int) -> List[str]:
     """
     Main function for interactive recommendation selection.
 

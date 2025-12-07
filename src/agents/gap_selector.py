@@ -53,7 +53,7 @@ class GapSelectorAgent:
                 print(f"[OK] Auto-selected {len(selected_indices)} gaps (severity <= {auto_severity})")
             else:
                 # Interactive selection
-                selected_ids = interactive_gap_selection(gaps, auto_severity=None)
+                selected_ids = interactive_gap_selection(gaps, auto_severity or "low")
                 state["user_selected_gaps"] = selected_ids
                 print(f"[OK] User selected {len(selected_ids)} gaps")
 
