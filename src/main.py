@@ -122,7 +122,7 @@ def optimize(
             selected_ids = interactive_selection(recommendations, auto_priority)
 
             if selected_ids:
-                # Re-run workflow with selected recommendations
+                # Apply selected recommendations using minimal workflow
                 console.print("\n[cyan]Applying selected recommendations...[/cyan]\n")
 
                 state = run_workflow_with_user_selection(
@@ -130,7 +130,8 @@ def optimize(
                     job_description=job_description,
                     accepted_recommendation_ids=selected_ids,
                     resume_path=str(resume),
-                    job_path=str(job)
+                    job_path=str(job),
+                    previous_state=state  # Pass state from phase 1 to avoid re-analysis
                 )
         elif auto_priority and recommendations:
             # Auto-select by priority
@@ -169,11 +170,11 @@ def optimize(
         # Print summary
         console.print(f"\n[bold]Final Results:[/bold]")
         console.print(f"  Similarity Score: {similarity_score:.1f}/100")
-        console.print(f"  Gaps Identified: {len(gaps)}")
+        console.print(f"  Gaps Identified: {len(gaps) if gaps else 0}")
         if selected_gaps is not None:
-            console.print(f"  Gaps Selected: {len(selected_gaps)}")
-        console.print(f"  Recommendations Generated: {len(recommendations)}")
-        console.print(f"  Changes Applied: {len(applied_changes)}\n")
+            console.print(f"  Gaps Selected: {len(selected_gaps) if selected_gaps else 0}")
+        console.print(f"  Recommendations Generated: {len(recommendations) if recommendations else 0}")
+        console.print(f"  Changes Applied: {len(applied_changes) if applied_changes else 0}\n")
 
     except Exception as e:
         console.print(f"\n[red]Error:[/red] {str(e)}\n")
@@ -244,8 +245,8 @@ def analyze(
         # Print summary
         console.print(f"\n[bold]Analysis Results:[/bold]")
         console.print(f"  Similarity Score: {similarity_score:.1f}/100")
-        console.print(f"  Gaps Identified: {len(gaps)}")
-        console.print(f"  Recommendations: {len(recommendations)}\n")
+        console.print(f"  Gaps Identified: {len(gaps) if gaps else 0}")
+        console.print(f"  Recommendations: {len(recommendations) if recommendations else 0}\n")
 
         console.print("[dim]Use 'optimize' command to apply recommendations.[/dim]\n")
 

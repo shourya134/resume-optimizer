@@ -66,7 +66,7 @@ class LaTeXEditorAgent:
             sections_str = json.dumps([
                 {
                     "section": s["section_name"],
-                    "content": s["content"][:300]  # Truncate for context
+                    "content": str(s.get("content", ""))[:300]  # Safe: convert to string first
                 }
                 for s in resume_sections
             ], indent=2)
@@ -88,6 +88,7 @@ class LaTeXEditorAgent:
                 system_prompt=system_prompt,
                 max_tokens=8192  # Larger for full resume
             )
+            print(f"AI Full Response: {response}")
 
             # Extract results
             modified_resume_tex = response.get("modified_resume_tex", resume_tex)
